@@ -123,3 +123,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+### Ziften Settings ###
+SPLUNK_API_URL = "localhost:8088"
+SPLUNK_API_TOKEN = "E9403BB2-6869-46A5-9BB3-BDFD245BB9A2"

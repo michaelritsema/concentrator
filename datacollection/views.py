@@ -29,6 +29,12 @@ def index(request):
 def enqueue(request):
     """ Take in some settings, generate a Protobuf, stick it on the queue
     """
+
+
+    data = request.body
+    print data
+    return HttpResponse("")
+
     if 'cert' in request.GET:
         return enqueue_cert(request)
 
@@ -56,8 +62,6 @@ def enqueue_cert(request):
     """ Take in some settings, generate a Protobuf, stick it on the queue
     """
 
-
-    data = request.body
     message = ExtensionCommand()
     message.timeStamp = int((datetime.datetime.now() - datetime.datetime(1970,1,1)).total_seconds())
     #message.extensionType = 1

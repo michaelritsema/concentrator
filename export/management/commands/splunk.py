@@ -4,6 +4,7 @@ import json
 from django.core.management.base import BaseCommand, CommandError
 from datacollection.models import AgentMessage
 from export.models import ConsumerOffset
+from django.conf import settings
 
 class Command(BaseCommand):
     help = 'Sync data with splunk'
@@ -57,14 +58,12 @@ class Command(BaseCommand):
 
 
     def sync_splunk(self, log_data_list):
-        # TODO: read from settings
-        # splunk token E9403BB2-6869-46A5-9BB3-BDFD245BB9A2
 
         headers = {
-            "authorization": "Splunk E9403BB2-6869-46A5-9BB3-BDFD245BB9A2"
+            "authorization": "Splunk %s" % settings.SPLUNK_API_TOKEN
         }
-        splunk_host = "localhost"
-        url = "http://%s:8088/services/collector" % splunk_host
+
+        url = "http://%s/services/collector" % settings.SPLUNK_API_URL
 
         #log_data = {"message_type": "http_test", "other": 1}
 
@@ -74,6 +73,7 @@ class Command(BaseCommand):
             "sourcetype": "concentrator",
             "source": "ziften"
         }
+
         data = ""
         for row in log_data_list:
             rootevent['event'] = row
