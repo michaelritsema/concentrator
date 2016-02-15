@@ -1,15 +1,15 @@
 from __future__ import absolute_import
 import requests
 
-"""
-    This file is placed in the ziften splunk app folder
-"""
 
 class Device:
     path = "ziften"
 
     def __init__(self, hosts_mapping):
         self.hosts_mapping = hosts_mapping
+
+        #TODO Move this to a config file
+        self.ziftenapi_url = "http://localhost:8000"
 
     def submit_action(self, settings, results):
         """
@@ -21,14 +21,17 @@ class Device:
         """
             Triggered by Splunk's 'Validate'
         """
-        ziftenapi_url = "http://localhost:8000"
+
+        action_type = settings.get('action_type', '')
+        # USB,FIREWALL,KILL,ALL
 
         payload = {
             "settings": settings,
-            "results": results
+            "results": results,
+            "action_type" : action_type
         }
 
-        requests.post(ziftenapi_url + '/api/enqueue', json=results)
+        requests.post(self.ziftenapi_url + '/api/enqueue', json=results)
 
     def undo_action(self):
         self.__log("I am undoing the action")
