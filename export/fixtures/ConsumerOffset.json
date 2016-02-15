@@ -1,0 +1,10 @@
+[
+  {
+    "model": "export.ConsumerOffset",
+    "pk": 1,
+    "fields": {
+      "consumer": "splunk",
+      "last_row_id": 0
+    }
+  }
+]
