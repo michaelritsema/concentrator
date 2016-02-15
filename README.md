@@ -11,7 +11,8 @@ python manage.py run server 0.0.0.0:8000
 
 - Update settings.py
 -- SPLUNK_API_URL, SPLUNK_API_TOKEN
-* Splunk Setup*
+
+*Splunk Setup*
 
  - Point Splunk HTTP collector to the IP:PORT of the concentrator
  - Under Splunk Global Settings : Disable Splunk SSL unless you want to setup SSL on the server
