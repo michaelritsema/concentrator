@@ -9,6 +9,8 @@ import time
 import calendar
 import uuid
 import extensions
+import json
+import re
 
 import messages
 from messages.ExtensionCommand_pb2 import ExtensionCommand
@@ -30,30 +32,33 @@ def enqueue(request):
     """ Take in some settings, generate a Protobuf, stick it on the queue
     """
 
-
     data = request.body
-    print data
-    return HttpResponse("")
+    payload = json.loads(data)
+    action_type = payload["action_type"]
 
-    if 'cert' in request.GET:
-        return enqueue_cert(request)
+    if action_type  == "KILL":
+        imagefilepath = payload["imagefilepath"]
+        filename = re.sub(".*\\\\","", imagefilepath)
 
-    data = request.body
-    message = ExtensionCommand()
-    message.timeStamp = int((datetime.datetime.now() - datetime.datetime(1970,1,1)).total_seconds())
-    #message.extensionType = 1
-    message.uuid = str(uuid.uuid1())
-    message.serverJobID = 1
-    message.correlationUUID = str(uuid.uuid1())
-    message.extensionUUID = str(uuid.uuid1())
-    message.command = 1
-    message.messageVersion = 1
-    #message.runLifetime = 1
-    message.extensionObject = base64.decodestring(extensions.watchandkill)
-    message.extensionParameters.extend(["10", "Calculator"])
-    message.runType = 2
-    queued_message = QueuedMesssage(message_type=type(message).__name__, message=message.SerializeToString())
-    queued_message.save()
+        data = request.body
+        message = ExtensionCommand()
+        message.timeStamp = int((datetime.datetime.now() - datetime.datetime(1970,1,1)).total_seconds())
+        #message.extensionType = 1
+        message.uuid = str(uuid.uuid1())
+        message.serverJobID = 1
+        message.correlationUUID = str(uuid.uuid1())
+        message.extensionUUID = str(uuid.uuid1())
+        message.command = 1
+        message.messageVersion = 1
+        #message.runLifetime = 1
+        message.extensionObject = base64.decodestring(extensions.watchandkill)
+        message.extensionParameters.extend(["10", imagefilepath])
+        message.runType = 2
+        queued_message = QueuedMesssage(message_type=type(message).__name__, message=message.SerializeToString())
+        queued_message.save()
+
+    #elif action_type == "CERT":
+    #    enqueue_cert(request)
 
     return HttpResponse("")
 
@@ -63,7 +68,7 @@ def enqueue_cert(request):
     """
 
     message = ExtensionCommand()
-    message.timeStamp = int((datetime.datetime.now() - datetime.datetime(1970,1,1)).total_seconds())
+    message.timeStamp = int((datetime.datetime.now() - datetime.datetime(1970, 1, 1)).total_seconds())
     #message.extensionType = 1
     message.uuid = str(uuid.uuid1())
     message.serverJobID = 1
