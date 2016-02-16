@@ -32,7 +32,7 @@ class AgentMessage(models.Model):
             ip = ipaddr.IPv4Address(b)
         else:
             ip = ipaddr.IPv6Address(b)
-        return str(ip)
+        return ip
 
 
     def format_dict(self, message_type, data_dict):
