@@ -57,8 +57,8 @@ def enqueue(request):
         queued_message = QueuedMesssage(message_type=type(message).__name__, message=message.SerializeToString())
         queued_message.save()
 
-    #elif action_type == "CERT":
-    #    enqueue_cert(request)
+    elif action_type == "CERT":
+        enqueue_cert(request)
 
     return HttpResponse("")
 
