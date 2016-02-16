@@ -19,6 +19,8 @@ python manage.py run server 0.0.0.0:8000
  - Under Splunk Global Settings: Enable All Tokens
  - Generate an HTTP Token
  
+*Centos 6.x*
 
-*Centos 6.x Needs > Python 2.7*
-http://toomuchdata.com/2014/02/16/how-to-install-python-on-centos/
+- Centos 6.x needs Python 2.7
+- http://toomuchdata.com/2014/02/16/how-to-install-python-on-centos/
+- Now use "python2.7" and "pip2.7" as alternatives to "python" and "pip"
