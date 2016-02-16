@@ -27,7 +27,11 @@ class AgentMessage(models.Model):
     def format_ip(self, bytes):
 
         b = ipaddr.Bytes(base64.b64decode(bytes))
-        ip = ipaddr.IPAddress(b)
+        ip = ""
+        if len(b) == 4:
+            ip = ipaddr.IPv4Address(b)
+        else:
+            ip = ipaddr.IPv6Address(b)
         return str(ip)
 
 
