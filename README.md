@@ -21,4 +21,4 @@ python manage.py run server 0.0.0.0:8000
  
 
 *Centos 6.x Needs > Python 2.7*
-Instrunctions for building and install Python 3 on Centos6.x: http://www.shayanderson.com/linux/install-python-3-on-centos-6-server.htm
+http://toomuchdata.com/2014/02/16/how-to-install-python-on-centos/
