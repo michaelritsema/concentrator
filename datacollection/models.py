@@ -10,9 +10,10 @@ import socket
 import struct
 import base64
 import ipaddr
+import os
+from django.conf import settings
 
 class ProtobufField(models.BinaryField):
-
     description = "Protobuffers"
 
     def __init__(self, *args, **kwargs):
@@ -34,10 +35,9 @@ class AgentMessage(models.Model):
             ip = ipaddr.IPv6Address(b)
         return unicode(ip)
 
-
     def format_dict(self, message_type, data_dict):
 
-        if message_type in ("NetworkConnect", "OSXNetworkConnect") :
+        if message_type in ("NetworkConnect", "OSXNetworkConnect"):
             data_dict["IPAddress"] = self.format_ip(data_dict["IPAddress"])
             if "IPSourceAddress" in data_dict:
                 data_dict["IPSourceAddress"] = self.format_ip(data_dict["IPSourceAddress"])
@@ -47,7 +47,7 @@ class AgentMessage(models.Model):
             data_dict["agentGUID"] = data_dict["agentGUID"].strip("{}").lower()
         timestamp = time.time()
         if "timeStamp" in data_dict:
-            data_dict["clienttime"] = data_dict["timeStamp"]/ 10000000 - 11644473600
+            data_dict["clienttime"] = data_dict["timeStamp"] / 10000000 - 11644473600
             data_dict["servertime"] = timestamp
             del data_dict["timeStamp"]
         if "eventType" in data_dict:
@@ -64,13 +64,13 @@ class AgentMessage(models.Model):
         newdict = proto_to_dict.protobuf_to_dict(messages.proto_to_dict(self.message_type, self.message))
         newdict['id'] = self.id
         # no serializable
-        #newdict['insert_time'] = self.insert_time
+        # newdict['insert_time'] = self.insert_time
         # lower case fields for splunk
 
         formatted_dict = self.format_dict(self.message_type, newdict)
 
         lowerdict = {}
-        for k,v in formatted_dict.iteritems():
+        for k, v in formatted_dict.iteritems():
             lowerdict[k.lower()] = v
         return lowerdict
 
@@ -81,10 +81,11 @@ class QueuedMesssage(models.Model):
     message = models.BinaryField()
     is_delivered = models.BooleanField(default=False)
 
+
 class AgentMessageAdmin(admin.ModelAdmin):
-    list_display = ('insert_time', 'message_type','message_dict_short')
+    list_display = ('insert_time', 'message_type', 'message_dict_short')
     readonly_fields = ('insert_time', 'message_type', 'message_dict')
-    list_filter = ('message_type', )
+    list_filter = ('message_type',)
     list_per_page = 5
 
     def message_dict_short(self, obj):
@@ -97,3 +98,22 @@ class AgentMessageAdmin(admin.ModelAdmin):
 admin.site.register(QueuedMesssage)
 admin.site.site_header = 'Ziften Agent Concentrator'
 admin.site.register(AgentMessage, AgentMessageAdmin)
+
+
+class PowerShellScript(models.Model):
+    schedule_choices = (
+        (1, 'Once (1)'),
+        (2, 'On Idle (2)'),
+        (3, 'Periodically (3)'),
+        (4, 'OnDemand (4)')
+    )
+    powershell_path = os.path.join(settings.BASE_DIR, 'datacollection/powershell/scripts')
+    filename_choices = [(f,f) for f in os.listdir(powershell_path)]
+    
+    filename = models.CharField(max_length=255, choices = filename_choices)
+    parameterJSON = models.TextField(null=True)
+    schedule = models.IntegerField(choices=schedule_choices)
+    run_periodically_sec = models.IntegerField(null=True)
+
+
+admin.site.register(PowerShellScript)

@@ -40,7 +40,7 @@ def enqueue(request):
         message = extensions.cert(payload)
 
     if message:
-        queued_message = QueuedMesssage(message_type=message_type, message)
+        queued_message = QueuedMesssage(message_type=message_type, message=message)
         queued_message.save()
 
     return HttpResponse("")
