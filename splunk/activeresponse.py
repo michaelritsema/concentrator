@@ -1,16 +1,14 @@
 from __future__ import absolute_import
 import requests
-#import splunk.mining.dcutils as dcu
-#logger = dcu.getLogger()
 import os
 
 class Device:
     path = "ziften"
 
     def __init__(self, hosts_mapping):
-        self.hosts_mapping = hosts_mapping
-
         #TODO Move this to a config file
+        self.hosts_mapping = hosts_mapping
+        self.fortinet_ip = "10.0.20.150"
         self.ziftenapi_url = "http://localhost:8000"
 
     def submit_action(self, settings, results):
@@ -47,18 +45,17 @@ class Device:
     def expiration(self):
         self.__log("I am running the expiration")
 
-
     def fortinet(self, settings, results):
         # ipaddress must exist in query
         try:
-            stmt = "/opt/splunkbeta/bin/python /opt/splunkbeta/etc/apps/search/bin/fortiquarantine.py 10.0.20.150 root " + results['ipaddress'] + ' > /dev/null 2>&1'
-            #logger.warn("running statemetn: " + stmt)
+            stmt = "/opt/splunk/bin/python /opt/splunk/etc/apps/search/bin/fortiquarantine.py " + self.fortinet_ip + " root " + results['ipaddress'] + ' > /dev/null 2>&1'
             os.system(stmt)
         except:
             pass
-            #logger.warn("unable to run fortiney.py")s
+
 
 
 if __name__ == "__main__":
     device = Device("")
-    device.submit_action({}, {})
+    #device.submit_action({}, {})
+    #device.fortinet({},{'ipaddress':'127.0.0.1'})

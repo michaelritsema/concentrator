@@ -94,6 +94,6 @@ class AgentMessageAdmin(admin.ModelAdmin):
         return str(str(obj.message_dict()))
 
 
-admin.site.register(QueuedMesssage, AgentMessageAdmin)
+admin.site.register(QueuedMesssage)
 admin.site.site_header = 'Ziften Agent Concentrator'
 admin.site.register(AgentMessage, AgentMessageAdmin)
