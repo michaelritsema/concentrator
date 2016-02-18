@@ -82,6 +82,12 @@ class QueuedMesssage(models.Model):
     message = models.BinaryField()
     is_delivered = models.BooleanField(default=False)
 
+class QueuedMessageAdmin(admin.ModelAdmin):
+
+    readonly_fields = ('message_decoded',)
+
+    def message_decoded(self, obj):
+        return str(obj.message)
 
 class AgentMessageAdmin(admin.ModelAdmin):
     list_display = ('insert_time', 'message_type', 'message_dict_short')
@@ -96,7 +102,7 @@ class AgentMessageAdmin(admin.ModelAdmin):
         return str(str(obj.message_dict()))
 
 
-admin.site.register(QueuedMesssage)
+admin.site.register(QueuedMesssage, QueuedMessageAdmin)
 admin.site.site_header = 'Ziften Agent Concentrator'
 admin.site.register(AgentMessage, AgentMessageAdmin)
 
