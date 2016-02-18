@@ -59,4 +59,5 @@ class Device:
 
 if __name__ == "__main__":
     device = Device("")
-    device.run_action({'action_type': 'KILLPID'}, {'pid': 1})
+    device.run_action({'action_type': 'KILL'}, {'pid': 'x'})
+    #device.run_action({'action_type': 'KILLPID'}, {'pid': 1})

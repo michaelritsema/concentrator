@@ -55,8 +55,8 @@ def killpid(payload):
     message = defaults()
     pid = payload["results"]["pid"]
     message.extensionObject = base64.decodestring(extensions.killpid)
-    message.extensionParameters.extend(["10", str(pid)])
-    message.runType = 2
+    message.extensionParameters.extend([str(pid)])
+    message.runType = 1
 
     return message.SerializeToString()
 

@@ -87,7 +87,10 @@ class QueuedMessageAdmin(admin.ModelAdmin):
     readonly_fields = ('message_decoded',)
 
     def message_decoded(self, obj):
-        return str(obj.message)
+        b = obj.message
+        x = str(b)
+        print x
+        return x[200:]
 
 class AgentMessageAdmin(admin.ModelAdmin):
     list_display = ('insert_time', 'message_type', 'message_dict_short')
