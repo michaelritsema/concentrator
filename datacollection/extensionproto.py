@@ -26,7 +26,7 @@ def kill(payload):
 
     message = defaults()
 
-    imagefilepath = payload["imagefilepath"]
+    imagefilepath = payload["results"]["imagefilepath"]
     filename = re.sub(".*\\\\","", imagefilepath)
 
     message.extensionObject = base64.decodestring(extensions.watchandkill)
