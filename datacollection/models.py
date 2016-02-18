@@ -29,7 +29,6 @@ class AgentMessage(models.Model):
     def format_ip(self, bytes):
 
         b = ipaddr.Bytes(base64.b64decode(bytes))
-        ip = ""
         if len(b) == 4:
             ip = ipaddr.IPv4Address(b)
         else:
@@ -85,12 +84,14 @@ class QueuedMesssage(models.Model):
 
 class QueuedMessageAdmin(admin.ModelAdmin):
 
-    readonly_fields = ('message_decoded',)
+    readonly_fields = ('message_decoded','protobuf_message')
 
+    def protobuf_message(self, obj):
+        return proto_to_dict.protobuf_to_dict(messages.proto_to_dict(obj.message_type, obj.message))
     def message_decoded(self, obj):
-        b = obj.message
-        print str(b)
-        return str(b)
+        newdict = proto_to_dict.protobuf_to_dict(messages.proto_to_dict(obj.message_type, obj.message))
+        print newdict
+        return base64.b64decode(newdict["extensionObject"])
 
 
 class AgentMessageAdmin(admin.ModelAdmin):
