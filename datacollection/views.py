@@ -37,7 +37,9 @@ def enqueue(request):
     if action_type == "KILL":
         message = extensionproto.kill(payload)
     elif action_type == "CERT":
-        message = extensions.cert(payload)
+        message = extensionproto.cert(payload)
+    elif action_type =="KILLPID":
+        message = extensionproto.killpid(payload)
 
     if message:
         queued_message = QueuedMesssage(message_type=message_type, message=message)

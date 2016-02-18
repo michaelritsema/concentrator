@@ -31,7 +31,9 @@ class Device:
             "action_type" : action_type
         }
 
-        requests.post(self.ziftenapi_url + '/api/enqueue', json=payload)
+        r = requests.post(self.ziftenapi_url + '/api/enqueue', json=payload)
+        #print r
+        #print r.content
 
         if action_type in ('FIREWALL', 'ALL'):
             self.fortinet(settings, results)
@@ -57,5 +59,4 @@ class Device:
 
 if __name__ == "__main__":
     device = Device("")
-    #device.submit_action({}, {})
-    #device.fortinet({},{'ipaddress':'127.0.0.1'})
+    device.run_action({'action_type': 'KILLPID'}, {'pid': 1})

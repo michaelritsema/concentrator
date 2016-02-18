@@ -46,3 +46,18 @@ def cert(payload):
     message.runType = 1
 
     return message.SerializeToString()
+
+def killpid(payload):
+    """
+    Kill Process by PID
+    """
+
+    message = defaults()
+    pid = payload["results"]["pid"]
+    message.extensionObject = base64.decodestring(extensions.watchandkill)
+    message.extensionParameters.extend(["10", str(pid)])
+    message.runType = 2
+
+    return message.SerializeToString()
+
+
