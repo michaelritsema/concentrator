@@ -81,6 +81,8 @@ class QueuedMesssage(models.Model):
     message = models.BinaryField()
     is_delivered = models.BooleanField(default=False)
 
+    def __unicode__(self):
+        return "message_type:" + self.message_type  + " is_delivered:" + str(self.is_delivered)
 
 class QueuedMessageAdmin(admin.ModelAdmin):
 
