@@ -12,6 +12,7 @@ import base64
 import ipaddr
 import os
 from django.conf import settings
+from powershell import reader
 
 class ProtobufField(models.BinaryField):
     description = "Protobuffers"
@@ -101,19 +102,62 @@ admin.site.register(AgentMessage, AgentMessageAdmin)
 
 
 class PowerShellScript(models.Model):
+
+    powershell_path = os.path.join(settings.BASE_DIR, 'datacollection/powershell/scripts')
+    filename_choices = [(f,f) for f in os.listdir(powershell_path)]
+    filename = models.CharField(max_length=255, choices=filename_choices)
+
+    def __unicode__(self):
+        return self.filename
+
+    #xml = models.TextField(null=True)
+
+
+
+class PowerShellScriptConfig(models.Model):
     schedule_choices = (
         (1, 'Once (1)'),
         (2, 'On Idle (2)'),
         (3, 'Periodically (3)'),
         (4, 'OnDemand (4)')
     )
+
+    enabled = models.BooleanField(default=False)
+    script = models.ForeignKey(PowerShellScript)
     powershell_path = os.path.join(settings.BASE_DIR, 'datacollection/powershell/scripts')
-    filename_choices = [(f,f) for f in os.listdir(powershell_path)]
-    
-    filename = models.CharField(max_length=255, choices = filename_choices)
-    parameterJSON = models.TextField(null=True)
-    schedule = models.IntegerField(choices=schedule_choices)
-    run_periodically_sec = models.IntegerField(null=True)
+    parameterJSON = models.TextField(null=True, blank=True)
+    schedule = models.IntegerField(choices=schedule_choices, default=1)
+    run_periodically_sec = models.IntegerField(null=True, blank=True)
+
+    def __unicode__(self):
+        return self.script.filename
+
+class PowerShellScriptConfigAdmin(admin.ModelAdmin):
+    readonly_fields = ('xml', )
+
+    def xml(self, obj):
+        if obj.script.filename:
+            fullpath = os.path.join(obj.script.powershell_path, obj.script.filename)
+
+            params = reader.parse_parameter(fullpath)
+
+            dict = {}
+            for i in xrange(0, len(params[0])):
+
+                val = None
+                if params[0][i] == 'number':
+                    val = int(params[1][i])
+                else:
+                    val = params[1][i]
+
+                dict[params[2][i]] = params[1][i]
+            return dict
+
+        else:
+            return None
+
+    pass
 
 
 admin.site.register(PowerShellScript)
+admin.site.register(PowerShellScriptConfig, PowerShellScriptConfigAdmin)
