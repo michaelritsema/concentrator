@@ -40,6 +40,8 @@ def enqueue(request):
         message = extensionproto.cert(payload)
     elif action_type =="KILLPID":
         message = extensionproto.killpid(payload)
+    elif action_type =="EJECTUSB":
+        message = extensionproto.ejectusb(payload)
 
     if message:
         queued_message = QueuedMesssage(message_type=message_type, message=message)

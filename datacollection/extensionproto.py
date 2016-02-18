@@ -60,4 +60,17 @@ def killpid(payload):
 
     return message.SerializeToString()
 
+def ejectusb(payload):
+    """
+    Eject USB by Drive letter
+    """
+
+    message = defaults()
+    drive = payload["results"]["drive"]
+    message.extensionObject = base64.decodestring(extensions.ejectusb)
+    message.extensionParameters.extend([str(drive)])
+    message.runType = 1
+
+    return message.SerializeToString()
+
 
