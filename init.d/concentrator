@@ -12,25 +12,34 @@ case "$1" in
   start)
         echo -n "Starting $DESC: "
         if [[ ! -f $PID_FILE ]]; then
-            $APP_PATH/start.sh > /dev/null & echo -$! > $PID_FILE
+            /opt/concentrator/start.sh > /dev/null & echo $! > $PID_FILE
         fi
         echo "$NAME."
         ;;
   stop)
         echo -n "Stopping $DESC: "
 	/opt/concentrator/stop.sh >/dev/null
+  	if [[ -f $PID_FILE ]]; then
+	    rm $PID_FILE
+        fi
+
+
         echo "$NAME."
         ;;
 
   restart|force-reload)
         echo -n "Restarting $DESC: "
-        kill -HUP $(cat $PID_FILE 2> /dev/null) || true
-        sleep 1
-        $APP_PATH/start.sh > /dev/null & echo $! > $PID_FILE
+  	if [[ -f $PID_FILE ]]; then
+	    rm $PID_FILE
+        fi
+	/opt/concentrator/stop.sh 
+	sleep 2
+        if [[ ! -f $PID_FILE ]]; then
+            /opt/concentrator/start.sh > /dev/null & echo $! > $PID_FILE
+        fi
         echo "$NAME."
         ;;
   *)
-        N=/etc/init.d/$NAME
         echo "Usage: $N {start|stop|restart|force-reload}" >&2
         exit 1
         ;;
