@@ -32,6 +32,14 @@ wget https://bootstrap.pypa.io/get-pip.py -O - | python2.7
 
 - Now use "python2.7" and "pip2.7" as alternatives to "python" and "pip"
 
+*Setting up as Service:*
+
+- concentrator must be installed at /opt/concentrator
+- mv /opt/concentrator/init.d/concentrator /etc/init.d/concetrator
+- chmod 755 /etc/init.d/concentrator
+- chmod 755 /opt/concentrator 
+
+
 *Tips*
 Editing python in vim
 ```:set tabstop=8 expandtab shiftwidth=4 softtabstop=4```
