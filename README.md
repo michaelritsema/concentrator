@@ -29,8 +29,10 @@ wget https://bootstrap.pypa.io/ez_setup.py -O - | python2.7
 wget https://bootstrap.pypa.io/get-pip.py -O - | python2.7
 ```
 
+
+- Now use "python2.7" and "pip2.7" as alternatives to "python" and "pip"
+
 *Tips*
 Editing python in vim
 ```:set tabstop=8 expandtab shiftwidth=4 softtabstop=4```
-```
-- Now use "python2.7" and "pip2.7" as alternatives to "python" and "pip"
+
