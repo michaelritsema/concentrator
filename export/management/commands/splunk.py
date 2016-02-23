@@ -26,13 +26,14 @@ class Command(BaseCommand):
             help='Max rows to sync')
 
         parser.add_argument('--service',
-            dest='max_rows',
-            default=5,
-            help='Max rows to sync')
-
+            action='store_true',
+            dest='service',
+            default=False,
+            help='Run this command as a service')
 
 
     def handle_loop(self, max_rows):
+        consumer = ConsumerOffset.objects.get(consumer='splunk')
         rows = list(AgentMessage.objects.filter(id__gt=consumer.last_row_id).order_by('id')[:max_rows])
         row_count = len(rows)
         self.stdout.write("Sending data to splunk. Sending %s found rows after last_row_id %s" % (row_count, consumer.last_row_id))
@@ -61,7 +62,7 @@ class Command(BaseCommand):
             run_as_service = True
 
         #options['poll_id']:
-        consumer = ConsumerOffset.objects.get(consumer='splunk')
+
 
         max_rows = 5
 
