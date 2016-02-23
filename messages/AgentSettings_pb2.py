@@ -8,10 +8,13 @@ from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 
+import PostgresType_pb2
+
+
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='AgentSettings.proto',
   package='',
-  serialized_pb='\n\x13\x41gentSettings.proto\x1a\x12PostgresType.proto\"\x8b\r\n\rAgentSettings\x12\x11\n\ttimeStamp\x18\x01 \x02(\x03\x12\x13\n\x0bserverJobID\x18* \x01(\x03\x12 \n\x18\x62ootTime_NumberIntervals\x18\x02 \x01(\x05\x12\"\n\x1a\x62ootTime_CPUUsageThreshold\x18\x03 \x01(\x05\x12\x1f\n\x17\x62ootTime_IntervalLength\x18\x04 \x01(\x05\x12(\n bootTime_SystemIsBootingCriteria\x18\x05 \x01(\x05\x12\x1e\n\x16\x61ppstart_NumberPeriods\x18\x06 \x01(\x05\x12\x1e\n\x16\x61ppstart_MaxPercentCPU\x18\x08 \x01(\x05\x12 \n\x18\x61ppstart_PollingInterval\x18\t \x01(\x05\x12\"\n\x1a\x61ppstart_ReportingInterval\x18\n \x01(\x05\x12%\n\x1dresourceusage_PollingInterval\x18\x0b \x01(\x05\x12\'\n\x1fresourceusage_ReportingInterval\x18\x0c \x01(\x05\x12!\n\x19resourceusage_IdleTimeout\x18\r \x01(\x05\x12\x34\n,resourceusage_SpikeCPUUsageForegroundProcess\x18\x0e \x01(\x05\x12-\n%resourceusage_SpikeCPUUsageBackground\x18\x0f \x01(\x05\x12\x37\n/resourceusage_SpikeMemoryUsageForegroundProcess\x18\x10 \x01(\x05\x12\x30\n(resourceusage_SpikeMemoryUsageBackground\x18\x11 \x01(\x05\x12\x33\n+resourceusage_SpikeIOUsageForegroundProcess\x18\x12 \x01(\x05\x12,\n$resourceusage_SpikeIOUsageBackground\x18\x13 \x01(\x05\x12\x38\n0resourceusage_SpikeNetworkUsageForegroundProcess\x18\x14 \x01(\x05\x12\x31\n)resourceusage_SpikeNetworkUsageBackground\x18\x15 \x01(\x05\x12&\n\x1e\x61gentstatus_HeartbeatFrequency\x18\x16 \x01(\x05\x12\x15\n\rDRA_IsEnabled\x18\x17 \x01(\x05\x12*\n\"DRA_CPUUsageCausingBeginAdjustment\x18\x18 \x01(\x05\x12(\n DRA_CPUUsageCausingEndAdjustment\x18\x19 \x01(\x05\x12\"\n\x1a\x44RA_ExcludedSystemServices\x18\x1a \x01(\x05\x12\x1d\n\x15\x44RA_ExcludedProcesses\x18\x1b \x01(\t\x12\x11\n\twebapp_id\x18\x1d \x03(\x05\x12\x18\n\x10webapp_ipaddress\x18\x1e \x03(\x05\x12\x1b\n\x13webapp_netmask_bits\x18) \x03(\x05\x12\x1e\n\x16processEndAgeThreshold\x18\x1f \x01(\r\x12%\n\x1dnetworkUsageReportingInterval\x18  \x01(\r\x12!\n\x19networkUsagePID_IsEnabled\x18! \x01(\r\x12\x1a\n\x12\x62rokerMaxQueueSize\x18\" \x01(\r\x12\x19\n\x11\x62rokerIdleTimeout\x18# \x01(\r\x12\x1e\n\x16\x62rokerDequeueFrequency\x18$ \x01(\r\x12+\n#interferingProcessReportingInterval\x18% \x01(\r\x12 \n\x18networkConnect_IsEnabled\x18& \x01(\r\x12\x0e\n\x06siteId\x18\' \x01(\t\x12\x46\n\x17networkConnectSendState\x18( \x01(\x0e\x32%.AgentSettings.NetworkConnectSendType\x12\x1e\n\x16processSummaryInterval\x18+ \x01(\x05\x12\x16\n\x04uuid\x18, \x01(\tB\x08\x82\xb5\x18\x04uuid\"f\n\x16NetworkConnectSendType\x12\x11\n\rFirstSeenBoot\x10\x00\x12\x12\n\x0e\x46irstSeenToday\x10\x01\x12\x11\n\rFirstSeenEver\x10\x02\x12\x12\n\x0e\x41llConnections\x10\x03\x42:\n\"com.ziften.server.protocol.messageB\x14\x41gentSettingsMessage')
+  serialized_pb='\n\x13\x41gentSettings.proto\x1a\x12PostgresType.proto\"\xda\r\n\rAgentSettings\x12\x11\n\ttimeStamp\x18\x01 \x02(\x03\x12\x13\n\x0bserverJobID\x18* \x01(\x03\x12 \n\x18\x62ootTime_NumberIntervals\x18\x02 \x01(\x05\x12\"\n\x1a\x62ootTime_CPUUsageThreshold\x18\x03 \x01(\x05\x12\x1f\n\x17\x62ootTime_IntervalLength\x18\x04 \x01(\x05\x12(\n bootTime_SystemIsBootingCriteria\x18\x05 \x01(\x05\x12\x1e\n\x16\x61ppstart_NumberPeriods\x18\x06 \x01(\x05\x12\x1e\n\x16\x61ppstart_MaxPercentCPU\x18\x08 \x01(\x05\x12 \n\x18\x61ppstart_PollingInterval\x18\t \x01(\x05\x12\"\n\x1a\x61ppstart_ReportingInterval\x18\n \x01(\x05\x12%\n\x1dresourceusage_PollingInterval\x18\x0b \x01(\x05\x12\'\n\x1fresourceusage_ReportingInterval\x18\x0c \x01(\x05\x12!\n\x19resourceusage_IdleTimeout\x18\r \x01(\x05\x12\x34\n,resourceusage_SpikeCPUUsageForegroundProcess\x18\x0e \x01(\x05\x12-\n%resourceusage_SpikeCPUUsageBackground\x18\x0f \x01(\x05\x12\x37\n/resourceusage_SpikeMemoryUsageForegroundProcess\x18\x10 \x01(\x05\x12\x30\n(resourceusage_SpikeMemoryUsageBackground\x18\x11 \x01(\x05\x12\x33\n+resourceusage_SpikeIOUsageForegroundProcess\x18\x12 \x01(\x05\x12,\n$resourceusage_SpikeIOUsageBackground\x18\x13 \x01(\x05\x12\x38\n0resourceusage_SpikeNetworkUsageForegroundProcess\x18\x14 \x01(\x05\x12\x31\n)resourceusage_SpikeNetworkUsageBackground\x18\x15 \x01(\x05\x12&\n\x1e\x61gentstatus_HeartbeatFrequency\x18\x16 \x01(\x05\x12\x15\n\rDRA_IsEnabled\x18\x17 \x01(\x05\x12*\n\"DRA_CPUUsageCausingBeginAdjustment\x18\x18 \x01(\x05\x12(\n DRA_CPUUsageCausingEndAdjustment\x18\x19 \x01(\x05\x12\"\n\x1a\x44RA_ExcludedSystemServices\x18\x1a \x01(\x05\x12\x1d\n\x15\x44RA_ExcludedProcesses\x18\x1b \x01(\t\x12\x11\n\twebapp_id\x18\x1d \x03(\x05\x12\x18\n\x10webapp_ipaddress\x18\x1e \x03(\x05\x12\x1b\n\x13webapp_netmask_bits\x18) \x03(\x05\x12\x1e\n\x16processEndAgeThreshold\x18\x1f \x01(\r\x12%\n\x1dnetworkUsageReportingInterval\x18  \x01(\r\x12!\n\x19networkUsagePID_IsEnabled\x18! \x01(\r\x12\x1a\n\x12\x62rokerMaxQueueSize\x18\" \x01(\r\x12\x19\n\x11\x62rokerIdleTimeout\x18# \x01(\r\x12\x1e\n\x16\x62rokerDequeueFrequency\x18$ \x01(\r\x12+\n#interferingProcessReportingInterval\x18% \x01(\r\x12 \n\x18networkConnect_IsEnabled\x18& \x01(\r\x12\x0e\n\x06siteId\x18\' \x01(\t\x12\x46\n\x17networkConnectSendState\x18( \x01(\x0e\x32%.AgentSettings.NetworkConnectSendType\x12\x1e\n\x16processSummaryInterval\x18+ \x01(\x05\x12\x16\n\x04uuid\x18, \x01(\tB\x08\x82\xb5\x18\x04uuid\x12&\n\x1e\x62lockIndividualProcessMessages\x18- \x01(\x05\x12%\n\x1d\x62lockProcessLoadImageMessages\x18. \x01(\x05\"f\n\x16NetworkConnectSendType\x12\x11\n\rFirstSeenBoot\x10\x00\x12\x12\n\x0e\x46irstSeenToday\x10\x01\x12\x11\n\rFirstSeenEver\x10\x02\x12\x12\n\x0e\x41llConnections\x10\x03\x42:\n\"com.ziften.server.protocol.messageB\x14\x41gentSettingsMessage')
 
 
 
@@ -40,8 +43,8 @@ _AGENTSETTINGS_NETWORKCONNECTSENDTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1617,
-  serialized_end=1719,
+  serialized_start=1696,
+  serialized_end=1798,
 )
 
 
@@ -346,6 +349,20 @@ _AGENTSETTINGS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')),
+    _descriptor.FieldDescriptor(
+      name='blockIndividualProcessMessages', full_name='AgentSettings.blockIndividualProcessMessages', index=42,
+      number=45, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='blockProcessLoadImageMessages', full_name='AgentSettings.blockProcessLoadImageMessages', index=43,
+      number=46, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -357,7 +374,7 @@ _AGENTSETTINGS = _descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=44,
-  serialized_end=1719,
+  serialized_end=1798,
 )
 
 _AGENTSETTINGS.fields_by_name['networkConnectSendState'].enum_type = _AGENTSETTINGS_NETWORKCONNECTSENDTYPE
