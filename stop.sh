@@ -1,2 +1,2 @@
-pkill -f "runserver 0.0.0.0:8000"
+pkill -f "/opt/concentrator/manage.py runserver"
 pkill -f " /opt/concentrator/manage.py splunk"
