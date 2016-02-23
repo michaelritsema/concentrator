@@ -33,20 +33,25 @@ class Command(BaseCommand):
 
 
     def handle_loop(self, max_rows):
-        consumer = ConsumerOffset.objects.get(consumer='splunk')
-        rows = list(AgentMessage.objects.filter(id__gt=consumer.last_row_id).order_by('id')[:max_rows])
-        row_count = len(rows)
-        self.stdout.write("Sending data to splunk. Sending %s found rows after last_row_id %s" % (row_count, consumer.last_row_id))
+        try:
+            consumer = ConsumerOffset.objects.get(consumer='splunk')
 
-        #TODO: add batch size
+            rows = list(AgentMessage.objects.filter(id__gt=consumer.last_row_id).order_by('id')[:max_rows])
+            row_count = len(rows)
+            self.stdout.write("Sending data to splunk. Sending %s found rows after last_row_id %s" % (row_count, consumer.last_row_id))
 
-        dicts = [row.message_dict() for row in rows]
-        self.sync_splunk(dicts)
+            #TODO: add batch size
 
-        if len(rows) > 0:
-            consumer.last_row_id = rows[-1].id
-            consumer.save()
-            self.stdout.write("Set last_row_id to %s" %(consumer.last_row_id,))
+            dicts = [row.message_dict() for row in rows]
+            self.sync_splunk(dicts)
+
+            if len(rows) > 0:
+                consumer.last_row_id = rows[-1].id
+                consumer.save()
+                self.stdout.write("Set last_row_id to %s" %(consumer.last_row_id,))
+        except:
+            self.stdout.write("Failed to Sync with spunk")
+
 
     def handle(self, *args, **options):
         if options['reset-offset']:
