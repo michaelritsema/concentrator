@@ -16,11 +16,17 @@ def index(request):
     """
         Endpoint to consume data from agents in XML wrappers
     """
-    xml = request.body
-    protomsg = messages.xml_to_proto(xml)
-    proto_type = type(protomsg).__name__
-    msg = AgentMessage(message_type=proto_type, message=protomsg.SerializeToString())
-    msg.save()
+    msg = ""
+    try:
+        xml = request.body
+        protomsg = messages.xml_to_proto(xml)
+        proto_type = type(protomsg).__name__
+        msg = AgentMessage(message_type=proto_type, message=protomsg.SerializeToString())
+        print 'Message %s received' % proto_type
+        msg.save()
+    except:
+        print "failed to parse message" + msg
+
     return HttpResponse("")
 
 @csrf_exempt
