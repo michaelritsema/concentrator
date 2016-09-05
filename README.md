@@ -22,7 +22,7 @@ python manage.py runserver 0.0.0.0:8000
 *Centos 6.x*
 
 - Centos 6.x needs Python 2.7
-- http://toomuchdata.com/2014/02/16/how-to-install-python-on-centos/
+- https://github.com/h2oai/h2o-2/wiki/installing-python-2.7-on-centos-6.3.-follow-this-sequence-exactly-for-centos-machine-only
 ```
 yum install wget
 wget https://bootstrap.pypa.io/ez_setup.py -O - | python2.7
