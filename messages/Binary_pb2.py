@@ -14,7 +14,7 @@ import PostgresType_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='Binary.proto',
   package='',
-  serialized_pb='\n\x0c\x42inary.proto\x1a\x12PostgresType.proto\"\xc2\x02\n\x06\x42inary\x12 \n\ttimeStamp\x18\x01 \x02(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x10\n\x08hostname\x18\x02 \x02(\t\x12\x0b\n\x03md5\x18\x03 \x03(\t\x12\x13\n\x0b\x66ileVersion\x18\x04 \x03(\t\x12\x17\n\x0f\x66ileDescription\x18\x05 \x03(\t\x12\x13\n\x0b\x63ompanyName\x18\x06 \x03(\t\x12\x13\n\x0bproductName\x18\x07 \x03(\t\x12\x14\n\x0cinternalName\x18\x08 \x03(\t\x12\x16\n\x0elegalCopyright\x18\t \x03(\t\x12\x17\n\x0flegalTrademarks\x18\n \x03(\t\x12\x18\n\x10originalFilename\x18\x0b \x03(\t\x12\x16\n\x0eproductVersion\x18\x0c \x03(\t\x12\x0e\n\x06siteId\x18\r \x01(\t\x12\x16\n\x04uuid\x18\x0e \x01(\tB\x08\x82\xb5\x18\x04uuidB3\n\"com.ziften.server.protocol.messageB\rBinaryMessage')
+  serialized_pb='\n\x0c\x42inary.proto\x1a\x12PostgresType.proto\"\xdf\x02\n\x06\x42inary\x12 \n\ttimeStamp\x18\x01 \x02(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x10\n\x08hostname\x18\x02 \x02(\t\x12\x0b\n\x03md5\x18\x03 \x03(\t\x12\x13\n\x0b\x66ileVersion\x18\x04 \x03(\t\x12\x17\n\x0f\x66ileDescription\x18\x05 \x03(\t\x12\x13\n\x0b\x63ompanyName\x18\x06 \x03(\t\x12\x13\n\x0bproductName\x18\x07 \x03(\t\x12\x14\n\x0cinternalName\x18\x08 \x03(\t\x12\x16\n\x0elegalCopyright\x18\t \x03(\t\x12\x17\n\x0flegalTrademarks\x18\n \x03(\t\x12\x18\n\x10originalFilename\x18\x0b \x03(\t\x12\x16\n\x0eproductVersion\x18\x0c \x03(\t\x12\x0e\n\x06siteId\x18\r \x01(\t\x12\x16\n\x04uuid\x18\x0e \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x1b\n\tagentGUID\x18\x0f \x01(\tB\x08\x82\xb5\x18\x04uuidB3\n\"com.ziften.server.protocol.messageB\rBinaryMessage')
 
 
 
@@ -124,6 +124,13 @@ _BINARY = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')),
+    _descriptor.FieldDescriptor(
+      name='agentGUID', full_name='Binary.agentGUID', index=14,
+      number=15, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')),
   ],
   extensions=[
   ],
@@ -134,7 +141,7 @@ _BINARY = _descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=37,
-  serialized_end=359,
+  serialized_end=388,
 )
 
 DESCRIPTOR.message_types_by_name['Binary'] = _BINARY
@@ -152,4 +159,6 @@ _BINARY.fields_by_name['timeStamp'].has_options = True
 _BINARY.fields_by_name['timeStamp']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\ttimestamp')
 _BINARY.fields_by_name['uuid'].has_options = True
 _BINARY.fields_by_name['uuid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
+_BINARY.fields_by_name['agentGUID'].has_options = True
+_BINARY.fields_by_name['agentGUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 # @@protoc_insertion_point(module_scope)

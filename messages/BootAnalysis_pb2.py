@@ -14,7 +14,7 @@ import PostgresType_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='BootAnalysis.proto',
   package='',
-  serialized_pb='\n\x12\x42ootAnalysis.proto\x1a\x12PostgresType.proto\"\x95\x03\n\x0c\x42ootAnalysis\x12 \n\ttimeStamp\x18\x01 \x02(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x1b\n\tagentGUID\x18\x02 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x1e\n\x0c\x61nalysisGUID\x18\x03 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12%\n\x0e\x65ventTimeStamp\x18\x04 \x03(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x11\n\teventType\x18\x05 \x03(\x05\x12\x11\n\tprocessId\x18\x06 \x03(\x05\x12\x17\n\x0fparentProcessId\x18\x07 \x03(\x05\x12\x15\n\rimageFileName\x18\x08 \x03(\t\x12\x13\n\x0b\x63ommandLine\x18\t \x03(\t\x12\x15\n\rimageFilepath\x18\n \x03(\t\x12\x14\n\x0cimageFileMD5\x18\x0b \x03(\t\x12\x13\n\x0b\x61\x63\x63ountName\x18\x0c \x03(\t\x12\x12\n\ndomainName\x18\r \x03(\t\x12\x0e\n\x06siteId\x18\x0e \x01(\t\x12\x16\n\x0e\x65xecutionCount\x18\x0f \x03(\x05\x12\x16\n\x04uuid\x18\x10 \x01(\tB\x08\x82\xb5\x18\x04uuidB9\n\"com.ziften.server.protocol.messageB\x13\x42ootAnalysisMessage')
+  serialized_pb='\n\x12\x42ootAnalysis.proto\x1a\x12PostgresType.proto\"\xd9\x03\n\x0c\x42ootAnalysis\x12 \n\ttimeStamp\x18\x01 \x02(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x1b\n\tagentGUID\x18\x02 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x1e\n\x0c\x61nalysisGUID\x18\x03 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12%\n\x0e\x65ventTimeStamp\x18\x04 \x03(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x11\n\teventType\x18\x05 \x03(\x05\x12\x11\n\tprocessId\x18\x06 \x03(\x05\x12\x17\n\x0fparentProcessId\x18\x07 \x03(\x05\x12\x15\n\rimageFileName\x18\x08 \x03(\t\x12\x13\n\x0b\x63ommandLine\x18\t \x03(\t\x12\x15\n\rimageFilepath\x18\n \x03(\t\x12\x14\n\x0cimageFileMD5\x18\x0b \x03(\t\x12\x13\n\x0b\x61\x63\x63ountName\x18\x0c \x03(\t\x12\x12\n\ndomainName\x18\r \x03(\t\x12\x0e\n\x06siteId\x18\x0e \x01(\t\x12\x16\n\x0e\x65xecutionCount\x18\x0f \x03(\x05\x12\x16\n\x04uuid\x18\x10 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x1d\n\x0bprocessUUID\x18\x11 \x03(\tB\x08\x82\xb5\x18\x04uuid\x12#\n\x11parentProcessUUID\x18\x12 \x03(\tB\x08\x82\xb5\x18\x04uuidB9\n\"com.ziften.server.protocol.messageB\x13\x42ootAnalysisMessage')
 
 
 
@@ -138,6 +138,20 @@ _BOOTANALYSIS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')),
+    _descriptor.FieldDescriptor(
+      name='processUUID', full_name='BootAnalysis.processUUID', index=16,
+      number=17, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')),
+    _descriptor.FieldDescriptor(
+      name='parentProcessUUID', full_name='BootAnalysis.parentProcessUUID', index=17,
+      number=18, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')),
   ],
   extensions=[
   ],
@@ -148,7 +162,7 @@ _BOOTANALYSIS = _descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=43,
-  serialized_end=448,
+  serialized_end=516,
 )
 
 DESCRIPTOR.message_types_by_name['BootAnalysis'] = _BOOTANALYSIS
@@ -172,4 +186,8 @@ _BOOTANALYSIS.fields_by_name['eventTimeStamp'].has_options = True
 _BOOTANALYSIS.fields_by_name['eventTimeStamp']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\ttimestamp')
 _BOOTANALYSIS.fields_by_name['uuid'].has_options = True
 _BOOTANALYSIS.fields_by_name['uuid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
+_BOOTANALYSIS.fields_by_name['processUUID'].has_options = True
+_BOOTANALYSIS.fields_by_name['processUUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
+_BOOTANALYSIS.fields_by_name['parentProcessUUID'].has_options = True
+_BOOTANALYSIS.fields_by_name['parentProcessUUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 # @@protoc_insertion_point(module_scope)

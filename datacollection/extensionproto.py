@@ -25,52 +25,33 @@ def kill(payload):
     """
 
     message = defaults()
-
     imagefilepath = payload["results"]["imagefilepath"]
     filename = re.sub(".*\\\\","", imagefilepath)
-
-    message.extensionObject = base64.decodestring(extensions.watchandkill)
-    message.extensionParameters.extend(["10", filename])
-    message.runType = 2
-
-    return message.SerializeToString()
-
-
-def cert(payload):
-    """
-    Collect Cert
-    """
-    message = defaults()
-
-    message.extensionObject = base64.decodestring(extensions.collectcert)
+    message.extensionObject = base64.decodestring(extensions.killprocessbyfilename)
+    message.extensionParameters.extend([filename])
     message.runType = 1
-
     return message.SerializeToString()
 
-def killpid(payload):
+def start_service(payload):
     """
-    Kill Process by PID
+    Start Service
     """
 
     message = defaults()
-    pid = payload["results"]["pid"]
-    message.extensionObject = base64.decodestring(extensions.killpid)
-    message.extensionParameters.extend([str(pid)])
+    service_name = payload["results"]["name"]
+    message.extensionObject = base64.decodestring(extensions.startservice)
+    message.extensionParameters.extend([service_name])
     message.runType = 1
+    return message.SerializeToString()    
 
-    return message.SerializeToString()
-
-def ejectusb(payload):
+def stop_service(payload):
     """
-    Eject USB by Drive letter
+    Start Service
     """
 
     message = defaults()
-    drive = payload["results"]["drive"]
-    message.extensionObject = base64.decodestring(extensions.ejectusb)
-    message.extensionParameters.extend([str(drive)])
+    service_name = payload["results"]["name"]
+    message.extensionObject = base64.decodestring(extensions.stopservice)
+    message.extensionParameters.extend([service_name])
     message.runType = 1
-
-    return message.SerializeToString()
-
-
+    return message.SerializeToString()        

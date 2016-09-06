@@ -14,7 +14,7 @@ import PostgresType_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='NetworkDataPID.proto',
   package='',
-  serialized_pb='\n\x14NetworkDataPID.proto\x1a\x12PostgresType.proto\"\x8b\x02\n\x0eNetworkDataPID\x12 \n\ttimeStamp\x18\x01 \x02(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x1b\n\tagentGUID\x18\x02 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x0b\n\x03PID\x18\x03 \x02(\x05\x12\x15\n\rimageFilepath\x18\x04 \x02(\t\x12\x11\n\tsentBytes\x18\x05 \x02(\x05\x12\x15\n\rreceivedBytes\x18\x06 \x02(\x05\x12\x14\n\x0csentBytes_v2\x18\t \x01(\x04\x12\x18\n\x10receivedBytes_v2\x18\n \x01(\x04\x12\x14\n\x0cimageFileMD5\x18\x07 \x01(\t\x12\x0e\n\x06siteId\x18\x08 \x01(\t\x12\x16\n\x04uuid\x18\x0b \x01(\tB\x08\x82\xb5\x18\x04uuidB;\n\"com.ziften.server.protocol.messageB\x15NetworkDataPIDMessage')
+  serialized_pb='\n\x14NetworkDataPID.proto\x1a\x12PostgresType.proto\"\xaa\x02\n\x0eNetworkDataPID\x12 \n\ttimeStamp\x18\x01 \x02(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x1b\n\tagentGUID\x18\x02 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x0b\n\x03PID\x18\x03 \x02(\x05\x12\x15\n\rimageFilepath\x18\x04 \x02(\t\x12\x11\n\tsentBytes\x18\x05 \x02(\x05\x12\x15\n\rreceivedBytes\x18\x06 \x02(\x05\x12\x14\n\x0csentBytes_v2\x18\t \x01(\x04\x12\x18\n\x10receivedBytes_v2\x18\n \x01(\x04\x12\x14\n\x0cimageFileMD5\x18\x07 \x01(\t\x12\x0e\n\x06siteId\x18\x08 \x01(\t\x12\x16\n\x04uuid\x18\x0b \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x1d\n\x0bprocessUUID\x18\x0c \x01(\tB\x08\x82\xb5\x18\x04uuidB;\n\"com.ziften.server.protocol.messageB\x15NetworkDataPIDMessage')
 
 
 
@@ -103,6 +103,13 @@ _NETWORKDATAPID = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')),
+    _descriptor.FieldDescriptor(
+      name='processUUID', full_name='NetworkDataPID.processUUID', index=11,
+      number=12, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')),
   ],
   extensions=[
   ],
@@ -113,7 +120,7 @@ _NETWORKDATAPID = _descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=45,
-  serialized_end=312,
+  serialized_end=343,
 )
 
 DESCRIPTOR.message_types_by_name['NetworkDataPID'] = _NETWORKDATAPID
@@ -133,4 +140,6 @@ _NETWORKDATAPID.fields_by_name['agentGUID'].has_options = True
 _NETWORKDATAPID.fields_by_name['agentGUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 _NETWORKDATAPID.fields_by_name['uuid'].has_options = True
 _NETWORKDATAPID.fields_by_name['uuid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
+_NETWORKDATAPID.fields_by_name['processUUID'].has_options = True
+_NETWORKDATAPID.fields_by_name['processUUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 # @@protoc_insertion_point(module_scope)

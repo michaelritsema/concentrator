@@ -14,7 +14,7 @@ import PostgresType_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='ExtensionCommand.proto',
   package='',
-  serialized_pb='\n\x16\x45xtensionCommand.proto\x1a\x12PostgresType.proto\"\xdb\x06\n\x10\x45xtensionCommand\x12 \n\ttimeStamp\x18\x01 \x01(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x0e\n\x06siteId\x18\x02 \x01(\t\x12\x16\n\x04uuid\x18\x03 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x13\n\x0bserverJobID\x18\x04 \x01(\x03\x12!\n\x0f\x63orrelationUUID\x18\x05 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x19\n\x0emessageVersion\x18\x06 \x01(\x05:\x01\x31\x12\x1f\n\rextensionUUID\x18\x07 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x37\n\x07\x63ommand\x18\x08 \x01(\x0e\x32&.ExtensionCommand.ExtensionCommandType\x12\x36\n\rextensionType\x18\t \x01(\x0e\x32\x1f.ExtensionCommand.ExtensionType\x12\x17\n\x0f\x65xtensionObject\x18\n \x01(\x0c\x12\x1b\n\x13\x65xtensionParameters\x18\x0b \x03(\t\x12\x39\n\nrunHosting\x18\x0c \x01(\x0e\x32\x1c.ExtensionCommand.RunHosting:\x07Service\x12=\n\x0brunLifetime\x18\r \x01(\x0e\x32\x1d.ExtensionCommand.RunLifetime:\tEphemeral\x12*\n\x07runType\x18\x0e \x01(\x0e\x32\x19.ExtensionCommand.RunType\x12\x1a\n\x12runPeriodicallySec\x18\x0f \x01(\x05\"T\n\x14\x45xtensionCommandType\x12\x0b\n\x07Install\x10\x01\x12\n\n\x06Remove\x10\x02\x12\n\n\x06\x45nable\x10\x03\x12\x0b\n\x07\x44isable\x10\x04\x12\n\n\x06Update\x10\x05\"%\n\rExtensionType\x12\x14\n\x10PowerShellScript\x10\x01\"(\n\nRunHosting\x12\x0b\n\x07Service\x10\x01\x12\r\n\tUserProxy\x10\x02\",\n\x0bRunLifetime\x12\r\n\tEphemeral\x10\x01\x12\x0e\n\nPersistent\x10\x02\"K\n\x07RunType\x12\x08\n\x04Once\x10\x01\x12\n\n\x06OnBoot\x10\x02\x12\n\n\x06OnIdle\x10\x03\x12\x10\n\x0cPeriodically\x10\x04\x12\x0c\n\x08OnDemand\x10\x05\x42=\n\"com.ziften.server.protocol.messageB\x17\x45xtensionCommandMessage')
+  serialized_pb='\n\x16\x45xtensionCommand.proto\x1a\x12PostgresType.proto\"\xe1\x07\n\x10\x45xtensionCommand\x12 \n\ttimeStamp\x18\x01 \x01(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x0e\n\x06siteId\x18\x02 \x01(\t\x12\x1c\n\nserverUUID\x18\x03 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x13\n\x0bserverJobID\x18\x04 \x01(\x03\x12!\n\x0f\x63orrelationUUID\x18\x05 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x19\n\x0emessageVersion\x18\x06 \x01(\x05:\x01\x31\x12\x1f\n\rextensionUUID\x18\x07 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x37\n\x07\x63ommand\x18\x08 \x01(\x0e\x32&.ExtensionCommand.ExtensionCommandType\x12\x36\n\rextensionType\x18\t \x01(\x0e\x32\x1f.ExtensionCommand.ExtensionType\x12+\n\x0f\x65xtensionObject\x18\n \x01(\x0c\x42\x12\x82\xb5\x18\x0elong varbinary\x12\x1b\n\x13\x65xtensionParameters\x18\x0b \x03(\t\x12\x39\n\nrunHosting\x18\x0c \x01(\x0e\x32\x1c.ExtensionCommand.RunHosting:\x07Service\x12=\n\x0brunLifetime\x18\r \x01(\x0e\x32\x1d.ExtensionCommand.RunLifetime:\tEphemeral\x12*\n\x07runType\x18\x0e \x01(\x0e\x32\x19.ExtensionCommand.RunType\x12\x1a\n\x12runPeriodicallySec\x18\x0f \x01(\x05\x12\x16\n\x04uuid\x18\x10 \x01(\tB\x08\x82\xb5\x18\x04uuid\"T\n\x14\x45xtensionCommandType\x12\x0b\n\x07Install\x10\x01\x12\n\n\x06Remove\x10\x02\x12\n\n\x06\x45nable\x10\x03\x12\x0b\n\x07\x44isable\x10\x04\x12\n\n\x06Update\x10\x05\"l\n\rExtensionType\x12\x14\n\x10PowerShellScript\x10\x01\x12\x13\n\x0f\x42\x61shShellScript\x10\x02\x12\x0e\n\nPerlScript\x10\x03\x12\x10\n\x0cPythonScript\x10\x04\x12\x0e\n\nRubyScript\x10\x05\"(\n\nRunHosting\x12\x0b\n\x07Service\x10\x01\x12\r\n\tUserProxy\x10\x02\",\n\x0bRunLifetime\x12\r\n\tEphemeral\x10\x01\x12\x0e\n\nPersistent\x10\x02\"X\n\x07RunType\x12\x08\n\x04Once\x10\x01\x12\n\n\x06OnBoot\x10\x02\x12\n\n\x06OnIdle\x10\x03\x12\x10\n\x0cPeriodically\x10\x04\x12\x0c\n\x08OnDemand\x10\x05\x12\x0b\n\x07OnLogin\x10\x06\x42=\n\"com.ziften.server.protocol.messageB\x17\x45xtensionCommandMessage')
 
 
 
@@ -47,8 +47,8 @@ _EXTENSIONCOMMAND_EXTENSIONCOMMANDTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=618,
-  serialized_end=702,
+  serialized_start=668,
+  serialized_end=752,
 )
 
 _EXTENSIONCOMMAND_EXTENSIONTYPE = _descriptor.EnumDescriptor(
@@ -61,11 +61,27 @@ _EXTENSIONCOMMAND_EXTENSIONTYPE = _descriptor.EnumDescriptor(
       name='PowerShellScript', index=0, number=1,
       options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='BashShellScript', index=1, number=2,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PerlScript', index=2, number=3,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PythonScript', index=3, number=4,
+      options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='RubyScript', index=4, number=5,
+      options=None,
+      type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=704,
-  serialized_end=741,
+  serialized_start=754,
+  serialized_end=862,
 )
 
 _EXTENSIONCOMMAND_RUNHOSTING = _descriptor.EnumDescriptor(
@@ -85,8 +101,8 @@ _EXTENSIONCOMMAND_RUNHOSTING = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=743,
-  serialized_end=783,
+  serialized_start=864,
+  serialized_end=904,
 )
 
 _EXTENSIONCOMMAND_RUNLIFETIME = _descriptor.EnumDescriptor(
@@ -106,8 +122,8 @@ _EXTENSIONCOMMAND_RUNLIFETIME = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=785,
-  serialized_end=829,
+  serialized_start=906,
+  serialized_end=950,
 )
 
 _EXTENSIONCOMMAND_RUNTYPE = _descriptor.EnumDescriptor(
@@ -136,11 +152,15 @@ _EXTENSIONCOMMAND_RUNTYPE = _descriptor.EnumDescriptor(
       name='OnDemand', index=4, number=5,
       options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='OnLogin', index=5, number=6,
+      options=None,
+      type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=831,
-  serialized_end=906,
+  serialized_start=952,
+  serialized_end=1040,
 )
 
 
@@ -166,7 +186,7 @@ _EXTENSIONCOMMAND = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='uuid', full_name='ExtensionCommand.uuid', index=2,
+      name='serverUUID', full_name='ExtensionCommand.serverUUID', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -220,7 +240,7 @@ _EXTENSIONCOMMAND = _descriptor.Descriptor(
       has_default_value=False, default_value="",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\016long varbinary')),
     _descriptor.FieldDescriptor(
       name='extensionParameters', full_name='ExtensionCommand.extensionParameters', index=10,
       number=11, type=9, cpp_type=9, label=3,
@@ -256,6 +276,13 @@ _EXTENSIONCOMMAND = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='uuid', full_name='ExtensionCommand.uuid', index=15,
+      number=16, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')),
   ],
   extensions=[
   ],
@@ -271,7 +298,7 @@ _EXTENSIONCOMMAND = _descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=47,
-  serialized_end=906,
+  serialized_end=1040,
 )
 
 _EXTENSIONCOMMAND.fields_by_name['command'].enum_type = _EXTENSIONCOMMAND_EXTENSIONCOMMANDTYPE
@@ -297,10 +324,14 @@ DESCRIPTOR.has_options = True
 DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), '\n\"com.ziften.server.protocol.messageB\027ExtensionCommandMessage')
 _EXTENSIONCOMMAND.fields_by_name['timeStamp'].has_options = True
 _EXTENSIONCOMMAND.fields_by_name['timeStamp']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\ttimestamp')
-_EXTENSIONCOMMAND.fields_by_name['uuid'].has_options = True
-_EXTENSIONCOMMAND.fields_by_name['uuid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
+_EXTENSIONCOMMAND.fields_by_name['serverUUID'].has_options = True
+_EXTENSIONCOMMAND.fields_by_name['serverUUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 _EXTENSIONCOMMAND.fields_by_name['correlationUUID'].has_options = True
 _EXTENSIONCOMMAND.fields_by_name['correlationUUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 _EXTENSIONCOMMAND.fields_by_name['extensionUUID'].has_options = True
 _EXTENSIONCOMMAND.fields_by_name['extensionUUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
+_EXTENSIONCOMMAND.fields_by_name['extensionObject'].has_options = True
+_EXTENSIONCOMMAND.fields_by_name['extensionObject']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\016long varbinary')
+_EXTENSIONCOMMAND.fields_by_name['uuid'].has_options = True
+_EXTENSIONCOMMAND.fields_by_name['uuid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 # @@protoc_insertion_point(module_scope)

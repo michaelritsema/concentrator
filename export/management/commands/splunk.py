@@ -38,17 +38,20 @@ class Command(BaseCommand):
 
             rows = list(AgentMessage.objects.filter(id__gt=consumer.last_row_id).order_by('id')[:max_rows])
             row_count = len(rows)
-            self.stdout.write("Sending data to splunk. Sending %s found rows after last_row_id %s" % (row_count, consumer.last_row_id))
-
-            #TODO: add batch size
-
-            dicts = [row.message_dict() for row in rows]
-            self.sync_splunk(dicts)
-
             if len(rows) > 0:
-                consumer.last_row_id = rows[-1].id
-                consumer.save()
-                self.stdout.write("Set last_row_id to %s" %(consumer.last_row_id,))
+                self.stdout.write("Sending data to splunk. Sending %s found rows after last_row_id %s" % (row_count, consumer.last_row_id))
+
+                #TODO: add batch size
+
+                dicts = [row.message_dict() for row in rows]
+                self.sync_splunk(dicts)
+
+                if len(rows) > 0:
+                    consumer.last_row_id = rows[-1].id
+                    consumer.save()
+                    self.stdout.write("Set last_row_id to %s" %(consumer.last_row_id,))
+            else:
+                self.stdout.write("No data to send....")
         except:
             self.stdout.write("Failed to Sync with spunk")
 
@@ -104,7 +107,8 @@ class Command(BaseCommand):
         for row in log_data_list:
             rootevent['event'] = row
             data = data + json.dumps(rootevent).encode('utf8')
-
+            # verbose log
+            self.stdout.write('Found: message_type=' + row['message_type'])
         r = requests.post(url, data=data, headers=headers)
 
         print r

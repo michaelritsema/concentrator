@@ -14,7 +14,7 @@ import PostgresType_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='ProcessCreated.proto',
   package='',
-  serialized_pb='\n\x14ProcessCreated.proto\x1a\x12PostgresType.proto\"\xa6\x02\n\x0eProcessCreated\x12 \n\ttimeStamp\x18\x01 \x02(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x1b\n\tagentGUID\x18\x02 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x0b\n\x03PID\x18\x03 \x02(\x05\x12\x1d\n\x0bprocessUUID\x18\x04 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x18\n\x10processImagePath\x18\x05 \x02(\t\x12\x12\n\nprocessMD5\x18\x06 \x02(\t\x12\x18\n\x10parentProcessPID\x18\x07 \x02(\x05\x12#\n\x11parentProcessUUID\x18\x08 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x13\n\x0b\x61\x63\x63ountName\x18\t \x02(\t\x12\x12\n\ndomainName\x18\n \x02(\t\x12\x13\n\x0b\x63ommandLine\x18\x0b \x01(\tB;\n\"com.ziften.server.protocol.messageB\x15ProcessCreatedMessage')
+  serialized_pb='\n\x14ProcessCreated.proto\x1a\x12PostgresType.proto\"\xe5\x02\n\x0eProcessCreated\x12 \n\ttimeStamp\x18\x01 \x02(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x1b\n\tagentGUID\x18\x02 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x0b\n\x03PID\x18\x03 \x02(\x05\x12\x1d\n\x0bprocessUUID\x18\x04 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x18\n\x10processImagePath\x18\x05 \x02(\t\x12\x12\n\nprocessMD5\x18\x06 \x02(\t\x12\x18\n\x10parentProcessPID\x18\x07 \x02(\x05\x12#\n\x11parentProcessUUID\x18\x08 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x13\n\x0b\x61\x63\x63ountName\x18\t \x02(\t\x12\x12\n\ndomainName\x18\n \x02(\t\x12\x13\n\x0b\x63ommandLine\x18\x0b \x01(\t\x12\x0e\n\x06siteId\x18\x0c \x01(\t\x12\x16\n\x04uuid\x18\r \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x15\n\rprocessWriter\x18\x0e \x01(\tB;\n\"com.ziften.server.protocol.messageB\x15ProcessCreatedMessage')
 
 
 
@@ -103,6 +103,27 @@ _PROCESSCREATED = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='siteId', full_name='ProcessCreated.siteId', index=11,
+      number=12, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='uuid', full_name='ProcessCreated.uuid', index=12,
+      number=13, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')),
+    _descriptor.FieldDescriptor(
+      name='processWriter', full_name='ProcessCreated.processWriter', index=13,
+      number=14, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -113,7 +134,7 @@ _PROCESSCREATED = _descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=45,
-  serialized_end=339,
+  serialized_end=402,
 )
 
 DESCRIPTOR.message_types_by_name['ProcessCreated'] = _PROCESSCREATED
@@ -135,4 +156,6 @@ _PROCESSCREATED.fields_by_name['processUUID'].has_options = True
 _PROCESSCREATED.fields_by_name['processUUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 _PROCESSCREATED.fields_by_name['parentProcessUUID'].has_options = True
 _PROCESSCREATED.fields_by_name['parentProcessUUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
+_PROCESSCREATED.fields_by_name['uuid'].has_options = True
+_PROCESSCREATED.fields_by_name['uuid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 # @@protoc_insertion_point(module_scope)

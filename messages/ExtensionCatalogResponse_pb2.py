@@ -14,7 +14,7 @@ import PostgresType_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='ExtensionCatalogResponse.proto',
   package='',
-  serialized_pb='\n\x1e\x45xtensionCatalogResponse.proto\x1a\x12PostgresType.proto\"\xe3\x05\n\x18\x45xtensionCatalogResponse\x12 \n\ttimeStamp\x18\x01 \x01(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x0e\n\x06siteId\x18\x02 \x01(\t\x12\x16\n\x04uuid\x18\x03 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x13\n\x0bserverJobID\x18\x04 \x01(\x03\x12!\n\x0f\x63orrelationUUID\x18\x05 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x1b\n\tagentGUID\x18\x06 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x19\n\x0emessageVersion\x18\x07 \x01(\x05:\x01\x31\x12\x1f\n\rextensionUUID\x18\x08 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x37\n\x05state\x18\t \x01(\x0e\x32(.ExtensionCatalogResponse.ExtensionState\x12\x1b\n\x13\x65xtensionParameters\x18\n \x03(\t\x12\x38\n\nrunHosting\x18\x0b \x01(\x0e\x32$.ExtensionCatalogResponse.RunHosting\x12:\n\x0brunLifetime\x18\x0c \x01(\x0e\x32%.ExtensionCatalogResponse.RunLifetime\x12\x32\n\x07runType\x18\r \x01(\x0e\x32!.ExtensionCatalogResponse.RunType\x12\x1a\n\x12runPeriodicallySec\x18\x0e \x01(\x05\"+\n\x0e\x45xtensionState\x12\x0b\n\x07\x45nabled\x10\x01\x12\x0c\n\x08\x44isabled\x10\x02\"(\n\nRunHosting\x12\x0b\n\x07Service\x10\x01\x12\r\n\tUserProxy\x10\x02\",\n\x0bRunLifetime\x12\r\n\tEphemeral\x10\x01\x12\x0e\n\nPersistent\x10\x02\"K\n\x07RunType\x12\x08\n\x04Once\x10\x01\x12\n\n\x06OnBoot\x10\x02\x12\n\n\x06OnIdle\x10\x03\x12\x10\n\x0cPeriodically\x10\x04\x12\x0c\n\x08OnDemand\x10\x05\x42\x45\n\"com.ziften.server.protocol.messageB\x1f\x45xtensionCatalogResponseMessage')
+  serialized_pb='\n\x1e\x45xtensionCatalogResponse.proto\x1a\x12PostgresType.proto\"\x81\x06\n\x18\x45xtensionCatalogResponse\x12 \n\ttimeStamp\x18\x01 \x01(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x0e\n\x06siteId\x18\x02 \x01(\t\x12\x1c\n\nserverUUID\x18\x03 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x13\n\x0bserverJobID\x18\x04 \x01(\x03\x12!\n\x0f\x63orrelationUUID\x18\x05 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x1b\n\tagentGUID\x18\x06 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x19\n\x0emessageVersion\x18\x07 \x01(\x05:\x01\x31\x12\x1f\n\rextensionUUID\x18\x08 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x37\n\x05state\x18\t \x01(\x0e\x32(.ExtensionCatalogResponse.ExtensionState\x12\x1b\n\x13\x65xtensionParameters\x18\n \x03(\t\x12\x38\n\nrunHosting\x18\x0b \x01(\x0e\x32$.ExtensionCatalogResponse.RunHosting\x12:\n\x0brunLifetime\x18\x0c \x01(\x0e\x32%.ExtensionCatalogResponse.RunLifetime\x12\x32\n\x07runType\x18\r \x01(\x0e\x32!.ExtensionCatalogResponse.RunType\x12\x1a\n\x12runPeriodicallySec\x18\x0e \x01(\x05\x12\x16\n\x04uuid\x18\x0f \x01(\tB\x08\x82\xb5\x18\x04uuid\"+\n\x0e\x45xtensionState\x12\x0b\n\x07\x45nabled\x10\x01\x12\x0c\n\x08\x44isabled\x10\x02\"(\n\nRunHosting\x12\x0b\n\x07Service\x10\x01\x12\r\n\tUserProxy\x10\x02\",\n\x0bRunLifetime\x12\r\n\tEphemeral\x10\x01\x12\x0e\n\nPersistent\x10\x02\"K\n\x07RunType\x12\x08\n\x04Once\x10\x01\x12\n\n\x06OnBoot\x10\x02\x12\n\n\x06OnIdle\x10\x03\x12\x10\n\x0cPeriodically\x10\x04\x12\x0c\n\x08OnDemand\x10\x05\x42\x45\n\"com.ziften.server.protocol.messageB\x1f\x45xtensionCatalogResponseMessage')
 
 
 
@@ -35,8 +35,8 @@ _EXTENSIONCATALOGRESPONSE_EXTENSIONSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=586,
-  serialized_end=629,
+  serialized_start=616,
+  serialized_end=659,
 )
 
 _EXTENSIONCATALOGRESPONSE_RUNHOSTING = _descriptor.EnumDescriptor(
@@ -56,8 +56,8 @@ _EXTENSIONCATALOGRESPONSE_RUNHOSTING = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=631,
-  serialized_end=671,
+  serialized_start=661,
+  serialized_end=701,
 )
 
 _EXTENSIONCATALOGRESPONSE_RUNLIFETIME = _descriptor.EnumDescriptor(
@@ -77,8 +77,8 @@ _EXTENSIONCATALOGRESPONSE_RUNLIFETIME = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=673,
-  serialized_end=717,
+  serialized_start=703,
+  serialized_end=747,
 )
 
 _EXTENSIONCATALOGRESPONSE_RUNTYPE = _descriptor.EnumDescriptor(
@@ -110,8 +110,8 @@ _EXTENSIONCATALOGRESPONSE_RUNTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=719,
-  serialized_end=794,
+  serialized_start=749,
+  serialized_end=824,
 )
 
 
@@ -137,7 +137,7 @@ _EXTENSIONCATALOGRESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='uuid', full_name='ExtensionCatalogResponse.uuid', index=2,
+      name='serverUUID', full_name='ExtensionCatalogResponse.serverUUID', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -220,6 +220,13 @@ _EXTENSIONCATALOGRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='uuid', full_name='ExtensionCatalogResponse.uuid', index=14,
+      number=15, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')),
   ],
   extensions=[
   ],
@@ -234,7 +241,7 @@ _EXTENSIONCATALOGRESPONSE = _descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=55,
-  serialized_end=794,
+  serialized_end=824,
 )
 
 _EXTENSIONCATALOGRESPONSE.fields_by_name['state'].enum_type = _EXTENSIONCATALOGRESPONSE_EXTENSIONSTATE
@@ -258,12 +265,14 @@ DESCRIPTOR.has_options = True
 DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), '\n\"com.ziften.server.protocol.messageB\037ExtensionCatalogResponseMessage')
 _EXTENSIONCATALOGRESPONSE.fields_by_name['timeStamp'].has_options = True
 _EXTENSIONCATALOGRESPONSE.fields_by_name['timeStamp']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\ttimestamp')
-_EXTENSIONCATALOGRESPONSE.fields_by_name['uuid'].has_options = True
-_EXTENSIONCATALOGRESPONSE.fields_by_name['uuid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
+_EXTENSIONCATALOGRESPONSE.fields_by_name['serverUUID'].has_options = True
+_EXTENSIONCATALOGRESPONSE.fields_by_name['serverUUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 _EXTENSIONCATALOGRESPONSE.fields_by_name['correlationUUID'].has_options = True
 _EXTENSIONCATALOGRESPONSE.fields_by_name['correlationUUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 _EXTENSIONCATALOGRESPONSE.fields_by_name['agentGUID'].has_options = True
 _EXTENSIONCATALOGRESPONSE.fields_by_name['agentGUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 _EXTENSIONCATALOGRESPONSE.fields_by_name['extensionUUID'].has_options = True
 _EXTENSIONCATALOGRESPONSE.fields_by_name['extensionUUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
+_EXTENSIONCATALOGRESPONSE.fields_by_name['uuid'].has_options = True
+_EXTENSIONCATALOGRESPONSE.fields_by_name['uuid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 # @@protoc_insertion_point(module_scope)

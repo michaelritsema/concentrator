@@ -14,7 +14,7 @@ import PostgresType_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='ProcessTerminated.proto',
   package='',
-  serialized_pb='\n\x17ProcessTerminated.proto\x1a\x12PostgresType.proto\"\x90\x01\n\x11ProcessTerminated\x12 \n\ttimeStamp\x18\x01 \x02(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x1b\n\tagentGUID\x18\x02 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x0b\n\x03PID\x18\x03 \x02(\x05\x12\x1d\n\x0bprocessUUID\x18\x04 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x10\n\x08\x65xitCode\x18\x05 \x02(\x05\x42>\n\"com.ziften.server.protocol.messageB\x18ProcessTerminatedMessage')
+  serialized_pb='\n\x17ProcessTerminated.proto\x1a\x12PostgresType.proto\"\xb8\x01\n\x11ProcessTerminated\x12 \n\ttimeStamp\x18\x01 \x02(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x1b\n\tagentGUID\x18\x02 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x0b\n\x03PID\x18\x03 \x02(\x05\x12\x1d\n\x0bprocessUUID\x18\x04 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x10\n\x08\x65xitCode\x18\x05 \x02(\x05\x12\x0e\n\x06siteId\x18\x06 \x01(\t\x12\x16\n\x04uuid\x18\x07 \x01(\tB\x08\x82\xb5\x18\x04uuidB>\n\"com.ziften.server.protocol.messageB\x18ProcessTerminatedMessage')
 
 
 
@@ -61,6 +61,20 @@ _PROCESSTERMINATED = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='siteId', full_name='ProcessTerminated.siteId', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='uuid', full_name='ProcessTerminated.uuid', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')),
   ],
   extensions=[
   ],
@@ -71,7 +85,7 @@ _PROCESSTERMINATED = _descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=48,
-  serialized_end=192,
+  serialized_end=232,
 )
 
 DESCRIPTOR.message_types_by_name['ProcessTerminated'] = _PROCESSTERMINATED
@@ -91,4 +105,6 @@ _PROCESSTERMINATED.fields_by_name['agentGUID'].has_options = True
 _PROCESSTERMINATED.fields_by_name['agentGUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 _PROCESSTERMINATED.fields_by_name['processUUID'].has_options = True
 _PROCESSTERMINATED.fields_by_name['processUUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
+_PROCESSTERMINATED.fields_by_name['uuid'].has_options = True
+_PROCESSTERMINATED.fields_by_name['uuid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 # @@protoc_insertion_point(module_scope)

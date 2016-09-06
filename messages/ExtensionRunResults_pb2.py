@@ -14,7 +14,7 @@ import PostgresType_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='ExtensionRunResults.proto',
   package='',
-  serialized_pb='\n\x19\x45xtensionRunResults.proto\x1a\x12PostgresType.proto\"\xb6\x05\n\x13\x45xtensionRunResults\x12 \n\ttimeStamp\x18\x01 \x01(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x0e\n\x06siteId\x18\x02 \x01(\t\x12\x16\n\x04uuid\x18\x03 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x13\n\x0bserverJobID\x18\x04 \x01(\x03\x12!\n\x0f\x63orrelationUUID\x18\x05 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x1b\n\tagentGUID\x18\x06 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x19\n\x0emessageVersion\x18\x07 \x01(\x05:\x01\x31\x12\x1f\n\rextensionUUID\x18\x08 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12.\n\x17startExecutionTimeStamp\x18\t \x01(\x03\x42\r\x82\xb5\x18\ttimestamp\x12,\n\x15\x65ndExecutionTimeStamp\x18\n \x01(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\r\n\x05seqNo\x18\x0b \x01(\x05\x12\x10\n\x08\x65xitCode\x18\x0c \x01(\x05\x12\x10\n\x08stdError\x18\r \x01(\t\x12\x11\n\teventCode\x18\x0e \x01(\x05\x12\x0c\n\x04tag0\x18\x0f \x01(\t\x12\x0c\n\x04tag1\x18\x10 \x01(\t\x12\x0c\n\x04tag2\x18\x11 \x01(\t\x12\x0c\n\x04tag3\x18\x12 \x01(\t\x12\x0c\n\x04tag4\x18\x13 \x01(\t\x12\x0c\n\x04tag5\x18\x14 \x01(\t\x12\x0c\n\x04tag6\x18\x15 \x01(\t\x12\x0c\n\x04tag7\x18\x16 \x01(\t\x12\x0c\n\x04tag8\x18\x17 \x01(\t\x12\x0c\n\x04tag9\x18\x18 \x01(\t\x12\r\n\x05tag10\x18\x19 \x01(\t\x12\r\n\x05tag11\x18\x1a \x01(\t\x12\r\n\x05tag12\x18\x1b \x01(\t\x12\r\n\x05tag13\x18\x1c \x01(\t\x12\r\n\x05tag14\x18\x1d \x01(\t\x12\r\n\x05tag15\x18\x1e \x01(\t\x12\r\n\x05tag16\x18\x1f \x01(\t\x12\r\n\x05tag17\x18  \x01(\t\x12\r\n\x05tag18\x18! \x01(\t\x12\r\n\x05tag19\x18\" \x01(\tB@\n\"com.ziften.server.protocol.messageB\x1a\x45xtensionRunResultsMessage')
+  serialized_pb='\n\x19\x45xtensionRunResults.proto\x1a\x12PostgresType.proto\"\xd4\x05\n\x13\x45xtensionRunResults\x12 \n\ttimeStamp\x18\x01 \x02(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x0e\n\x06siteId\x18\x02 \x02(\t\x12\x1c\n\nserverUUID\x18\x03 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x13\n\x0bserverJobID\x18\x04 \x01(\x03\x12!\n\x0f\x63orrelationUUID\x18\x05 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x1b\n\tagentGUID\x18\x06 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x19\n\x0emessageVersion\x18\x07 \x01(\x05:\x01\x31\x12\x1f\n\rextensionUUID\x18\x08 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12.\n\x17startExecutionTimeStamp\x18\t \x01(\x03\x42\r\x82\xb5\x18\ttimestamp\x12,\n\x15\x65ndExecutionTimeStamp\x18\n \x01(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\r\n\x05seqNo\x18\x0b \x01(\x05\x12\x10\n\x08\x65xitCode\x18\x0c \x01(\x05\x12\x10\n\x08stdError\x18\r \x01(\t\x12\x11\n\teventCode\x18\x0e \x02(\x05\x12\x0c\n\x04tag0\x18\x0f \x01(\t\x12\x0c\n\x04tag1\x18\x10 \x01(\t\x12\x0c\n\x04tag2\x18\x11 \x01(\t\x12\x0c\n\x04tag3\x18\x12 \x01(\t\x12\x0c\n\x04tag4\x18\x13 \x01(\t\x12\x0c\n\x04tag5\x18\x14 \x01(\t\x12\x0c\n\x04tag6\x18\x15 \x01(\t\x12\x0c\n\x04tag7\x18\x16 \x01(\t\x12\x0c\n\x04tag8\x18\x17 \x01(\t\x12\x0c\n\x04tag9\x18\x18 \x01(\t\x12\r\n\x05tag10\x18\x19 \x01(\t\x12\r\n\x05tag11\x18\x1a \x01(\t\x12\r\n\x05tag12\x18\x1b \x01(\t\x12\r\n\x05tag13\x18\x1c \x01(\t\x12\r\n\x05tag14\x18\x1d \x01(\t\x12\r\n\x05tag15\x18\x1e \x01(\t\x12\r\n\x05tag16\x18\x1f \x01(\t\x12\r\n\x05tag17\x18  \x01(\t\x12\r\n\x05tag18\x18! \x01(\t\x12\r\n\x05tag19\x18\" \x01(\t\x12\x16\n\x04uuid\x18# \x01(\tB\x08\x82\xb5\x18\x04uuidB@\n\"com.ziften.server.protocol.messageB\x1a\x45xtensionRunResultsMessage')
 
 
 
@@ -28,20 +28,20 @@ _EXTENSIONRUNRESULTS = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='timeStamp', full_name='ExtensionRunResults.timeStamp', index=0,
-      number=1, type=3, cpp_type=2, label=1,
+      number=1, type=3, cpp_type=2, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\ttimestamp')),
     _descriptor.FieldDescriptor(
       name='siteId', full_name='ExtensionRunResults.siteId', index=1,
-      number=2, type=9, cpp_type=9, label=1,
+      number=2, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='uuid', full_name='ExtensionRunResults.uuid', index=2,
+      name='serverUUID', full_name='ExtensionRunResults.serverUUID', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
@@ -63,7 +63,7 @@ _EXTENSIONRUNRESULTS = _descriptor.Descriptor(
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')),
     _descriptor.FieldDescriptor(
       name='agentGUID', full_name='ExtensionRunResults.agentGUID', index=5,
-      number=6, type=9, cpp_type=9, label=1,
+      number=6, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -119,7 +119,7 @@ _EXTENSIONRUNRESULTS = _descriptor.Descriptor(
       options=None),
     _descriptor.FieldDescriptor(
       name='eventCode', full_name='ExtensionRunResults.eventCode', index=13,
-      number=14, type=5, cpp_type=1, label=1,
+      number=14, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -264,6 +264,13 @@ _EXTENSIONRUNRESULTS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='uuid', full_name='ExtensionRunResults.uuid', index=34,
+      number=35, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')),
   ],
   extensions=[
   ],
@@ -274,7 +281,7 @@ _EXTENSIONRUNRESULTS = _descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=50,
-  serialized_end=744,
+  serialized_end=774,
 )
 
 DESCRIPTOR.message_types_by_name['ExtensionRunResults'] = _EXTENSIONRUNRESULTS
@@ -290,8 +297,8 @@ DESCRIPTOR.has_options = True
 DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), '\n\"com.ziften.server.protocol.messageB\032ExtensionRunResultsMessage')
 _EXTENSIONRUNRESULTS.fields_by_name['timeStamp'].has_options = True
 _EXTENSIONRUNRESULTS.fields_by_name['timeStamp']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\ttimestamp')
-_EXTENSIONRUNRESULTS.fields_by_name['uuid'].has_options = True
-_EXTENSIONRUNRESULTS.fields_by_name['uuid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
+_EXTENSIONRUNRESULTS.fields_by_name['serverUUID'].has_options = True
+_EXTENSIONRUNRESULTS.fields_by_name['serverUUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 _EXTENSIONRUNRESULTS.fields_by_name['correlationUUID'].has_options = True
 _EXTENSIONRUNRESULTS.fields_by_name['correlationUUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 _EXTENSIONRUNRESULTS.fields_by_name['agentGUID'].has_options = True
@@ -302,4 +309,6 @@ _EXTENSIONRUNRESULTS.fields_by_name['startExecutionTimeStamp'].has_options = Tru
 _EXTENSIONRUNRESULTS.fields_by_name['startExecutionTimeStamp']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\ttimestamp')
 _EXTENSIONRUNRESULTS.fields_by_name['endExecutionTimeStamp'].has_options = True
 _EXTENSIONRUNRESULTS.fields_by_name['endExecutionTimeStamp']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\ttimestamp')
+_EXTENSIONRUNRESULTS.fields_by_name['uuid'].has_options = True
+_EXTENSIONRUNRESULTS.fields_by_name['uuid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 # @@protoc_insertion_point(module_scope)

@@ -14,7 +14,7 @@ import PostgresType_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='EventLogRecord.proto',
   package='',
-  serialized_pb='\n\x14\x45ventLogRecord.proto\x1a\x12PostgresType.proto\"\xd3\x04\n\x0e\x45ventLogRecord\x12 \n\ttimeStamp\x18\x01 \x02(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x1b\n\tagentGUID\x18\x02 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x14\n\x0crecordNumber\x18\x03 \x02(\r\x12\x0f\n\x07logfile\x18\x04 \x02(\t\x12\x17\n\x0f\x65ventIdentifier\x18\x05 \x02(\r\x12\x10\n\x08\x63\x61tegory\x18\x06 \x02(\r\x12\x15\n\rtimeGenerated\x18\x07 \x02(\r\x12\x13\n\x0btimeWritten\x18\x08 \x02(\r\x12\x0f\n\x07message\x18\t \x02(\t\x12\x11\n\teventType\x18\n \x02(\r\x12\x12\n\nsourceName\x18\x0b \x02(\t\x12\x15\n\rimageFilename\x18\x0c \x01(\t\x12\x15\n\rimageFilepath\x18\r \x01(\t\x12\x16\n\x0emoduleFilename\x18\x0e \x01(\t\x12\x16\n\x0emoduleFilepath\x18\x0f \x01(\t\x12\x13\n\x0bserviceName\x18\x10 \x01(\t\x12\x18\n\x10imageFileVersion\x18\x11 \x01(\t\x12\x19\n\x11moduleFileVersion\x18\x12 \x01(\t\x12\x14\n\x0cimageFileMD5\x18\x13 \x01(\t\x12\x15\n\rmoduleFileMD5\x18\x14 \x01(\t\x12\x13\n\x0b\x61\x63\x63ountName\x18\x15 \x01(\t\x12\x12\n\ndomainName\x18\x16 \x01(\t\x12\x0e\n\x06siteId\x18\x17 \x01(\t\x12\x14\n\x0c\x66ileContents\x18\x18 \x01(\x0c\x12\x10\n\x08\x66ileName\x18\x19 \x01(\t\x12\x16\n\x04uuid\x18\x1a \x01(\tB\x08\x82\xb5\x18\x04uuidB;\n\"com.ziften.server.protocol.messageB\x15\x45ventLogRecordMessage')
+  serialized_pb='\n\x14\x45ventLogRecord.proto\x1a\x12PostgresType.proto\"\xe7\x04\n\x0e\x45ventLogRecord\x12 \n\ttimeStamp\x18\x01 \x02(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x1b\n\tagentGUID\x18\x02 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x14\n\x0crecordNumber\x18\x03 \x02(\r\x12\x0f\n\x07logfile\x18\x04 \x02(\t\x12\x17\n\x0f\x65ventIdentifier\x18\x05 \x02(\r\x12\x10\n\x08\x63\x61tegory\x18\x06 \x02(\r\x12\x15\n\rtimeGenerated\x18\x07 \x02(\r\x12\x13\n\x0btimeWritten\x18\x08 \x02(\r\x12\x0f\n\x07message\x18\t \x02(\t\x12\x11\n\teventType\x18\n \x02(\r\x12\x12\n\nsourceName\x18\x0b \x02(\t\x12\x15\n\rimageFilename\x18\x0c \x01(\t\x12\x15\n\rimageFilepath\x18\r \x01(\t\x12\x16\n\x0emoduleFilename\x18\x0e \x01(\t\x12\x16\n\x0emoduleFilepath\x18\x0f \x01(\t\x12\x13\n\x0bserviceName\x18\x10 \x01(\t\x12\x18\n\x10imageFileVersion\x18\x11 \x01(\t\x12\x19\n\x11moduleFileVersion\x18\x12 \x01(\t\x12\x14\n\x0cimageFileMD5\x18\x13 \x01(\t\x12\x15\n\rmoduleFileMD5\x18\x14 \x01(\t\x12\x13\n\x0b\x61\x63\x63ountName\x18\x15 \x01(\t\x12\x12\n\ndomainName\x18\x16 \x01(\t\x12\x0e\n\x06siteId\x18\x17 \x01(\t\x12(\n\x0c\x66ileContents\x18\x18 \x01(\x0c\x42\x12\x82\xb5\x18\x0elong varbinary\x12\x10\n\x08\x66ileName\x18\x19 \x01(\t\x12\x16\n\x04uuid\x18\x1a \x01(\tB\x08\x82\xb5\x18\x04uuidB;\n\"com.ziften.server.protocol.messageB\x15\x45ventLogRecordMessage')
 
 
 
@@ -193,7 +193,7 @@ _EVENTLOGRECORD = _descriptor.Descriptor(
       has_default_value=False, default_value="",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\016long varbinary')),
     _descriptor.FieldDescriptor(
       name='fileName', full_name='EventLogRecord.fileName', index=24,
       number=25, type=9, cpp_type=9, label=1,
@@ -218,7 +218,7 @@ _EVENTLOGRECORD = _descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=45,
-  serialized_end=640,
+  serialized_end=660,
 )
 
 DESCRIPTOR.message_types_by_name['EventLogRecord'] = _EVENTLOGRECORD
@@ -236,6 +236,8 @@ _EVENTLOGRECORD.fields_by_name['timeStamp'].has_options = True
 _EVENTLOGRECORD.fields_by_name['timeStamp']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\ttimestamp')
 _EVENTLOGRECORD.fields_by_name['agentGUID'].has_options = True
 _EVENTLOGRECORD.fields_by_name['agentGUID']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
+_EVENTLOGRECORD.fields_by_name['fileContents'].has_options = True
+_EVENTLOGRECORD.fields_by_name['fileContents']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\016long varbinary')
 _EVENTLOGRECORD.fields_by_name['uuid'].has_options = True
 _EVENTLOGRECORD.fields_by_name['uuid']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')
 # @@protoc_insertion_point(module_scope)

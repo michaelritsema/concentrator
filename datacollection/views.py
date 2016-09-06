@@ -1,5 +1,4 @@
 from django.views.decorators.csrf import csrf_exempt
-
 from django.shortcuts import HttpResponse
 
 import base64
@@ -39,15 +38,13 @@ def enqueue(request):
     action_type = payload["action_type"]
     message_type = "ExtensionCommand"
     message = None
-
+    print  action_type
     if action_type == "KILL":
         message = extensionproto.kill(payload)
-    elif action_type == "CERT":
-        message = extensionproto.cert(payload)
-    elif action_type =="KILLPID":
-        message = extensionproto.killpid(payload)
-    elif action_type =="EJECTUSB":
-        message = extensionproto.ejectusb(payload)
+    elif action_type == "START_SERVICE":
+        message = extensionproto.start_service(payload)
+    elif action_type =="STOP_SERVICE":
+        message = extensionproto.stop_service(payload)
 
     if message:
         queued_message = QueuedMesssage(message_type=message_type, message=message)

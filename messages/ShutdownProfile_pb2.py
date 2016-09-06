@@ -14,7 +14,7 @@ import PostgresType_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='ShutdownProfile.proto',
   package='',
-  serialized_pb='\n\x15ShutdownProfile.proto\x1a\x12PostgresType.proto\"\x91\x01\n\x0fShutdownProfile\x12 \n\ttimeStamp\x18\x01 \x02(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x1b\n\tagentGUID\x18\x02 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x17\n\x0f\x62ootSpanInTicks\x18\x03 \x02(\x03\x12\x0e\n\x06siteId\x18\x04 \x01(\t\x12\x16\n\x04uuid\x18\x05 \x01(\tB\x08\x82\xb5\x18\x04uuidB<\n\"com.ziften.server.protocol.messageB\x16ShutdownProfileMessage')
+  serialized_pb='\n\x15ShutdownProfile.proto\x1a\x12PostgresType.proto\"\xb5\x01\n\x0fShutdownProfile\x12 \n\ttimeStamp\x18\x01 \x02(\x03\x42\r\x82\xb5\x18\ttimestamp\x12\x1b\n\tagentGUID\x18\x02 \x02(\tB\x08\x82\xb5\x18\x04uuid\x12\x17\n\x0f\x62ootSpanInTicks\x18\x03 \x02(\x03\x12\x0e\n\x06siteId\x18\x04 \x01(\t\x12\x16\n\x04uuid\x18\x05 \x01(\tB\x08\x82\xb5\x18\x04uuid\x12\x0e\n\x06module\x18\x06 \x03(\t\x12\x12\n\nshutdownMS\x18\x07 \x03(\x05\x42<\n\"com.ziften.server.protocol.messageB\x16ShutdownProfileMessage')
 
 
 
@@ -61,6 +61,20 @@ _SHUTDOWNPROFILE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), '\202\265\030\004uuid')),
+    _descriptor.FieldDescriptor(
+      name='module', full_name='ShutdownProfile.module', index=5,
+      number=6, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='shutdownMS', full_name='ShutdownProfile.shutdownMS', index=6,
+      number=7, type=5, cpp_type=1, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -71,7 +85,7 @@ _SHUTDOWNPROFILE = _descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=46,
-  serialized_end=191,
+  serialized_end=227,
 )
 
 DESCRIPTOR.message_types_by_name['ShutdownProfile'] = _SHUTDOWNPROFILE
