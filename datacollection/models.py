@@ -13,6 +13,39 @@ import ipaddr
 import os
 from django.conf import settings
 from powershell import reader
+from zepreader import ZextContainer
+import json
+
+class Zext(models.Model):
+    """
+        Container for data in a .zep file
+    """
+    
+
+    insert_time = models.DateTimeField(auto_now_add=True)
+    name = models.TextField()
+    zep = models.TextField()
+    extension_text = models.TextField()
+    extension_b64 = models.TextField()
+    params = models.TextField(null=True)
+
+    def __unicode__(self):
+        return self.name + ": " + self.params
+
+    def param_list(self):
+        return json.loads(self.params)
+
+    def save(self, force_insert=False, force_update=False):
+        z = ZextContainer.BuildZext(self.zep)
+        self.name = z.name
+        self.extension_text = z.extension_text
+        self.extension_b64 = z.extension_b64
+        self.params = json.dumps(z.params)
+
+        super(Zext, self).save(force_insert, force_update)
+
+class ZextAdmin(admin.ModelAdmin):
+    readonly_fields = ('name','extension_text','extension_b64')    
 
 class ProtobufField(models.BinaryField):
     description = "Protobuffers"
@@ -23,6 +56,7 @@ class ProtobufField(models.BinaryField):
 
 class AgentMessage(models.Model):
     insert_time = models.DateTimeField(auto_now_add=True)
+    agentguid = models.TextField(default="")
     message_type = models.TextField()
     message = models.BinaryField()
 
@@ -77,6 +111,7 @@ class AgentMessage(models.Model):
 
 class QueuedMesssage(models.Model):
     insert_time = models.DateTimeField(auto_now_add=True)
+    agentguid = models.TextField(default="")
     message_type = models.TextField()
     message = models.BinaryField()
     is_delivered = models.BooleanField(default=False)
@@ -171,6 +206,6 @@ class PowerShellScriptConfigAdmin(admin.ModelAdmin):
 
     pass
 
-
+admin.site.register(Zext,ZextAdmin)
 admin.site.register(PowerShellScript)
 admin.site.register(PowerShellScriptConfig, PowerShellScriptConfigAdmin)

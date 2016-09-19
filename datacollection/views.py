@@ -9,6 +9,10 @@ import messages
 
 from models import AgentMessage
 from models import QueuedMesssage
+from models import Zext
+
+from zepreader import ZextContainer
+import sys
 
 @csrf_exempt
 def index(request):
@@ -34,33 +38,44 @@ def enqueue(request):
     """
 
     data = request.body
+    print data
     payload = json.loads(data)
-    action_type = payload["action_type"]
+    name = payload["name"]
+    z = None
+    
+    try: 
+        z = Zext.objects.get(name=name)
+    except:
+        return HttpResponse("No extension loaded with name: "+ name)
     message_type = "ExtensionCommand"
-    message = None
-    print  action_type
-    if action_type == "KILL":
-        message = extensionproto.kill(payload)
-    elif action_type == "START_SERVICE":
-        message = extensionproto.start_service(payload)
-    elif action_type =="STOP_SERVICE":
-        message = extensionproto.stop_service(payload)
+    ext = z.extension_text
+    # TODO: THIS NEEDS TO BE UNICODE
+
+    message = extensionproto.create(str(ext),z.param_list(),payload)
+    
+    agentguid ="<NOT SET>"
+    if "agentguid" in payload:
+        agentguid = payload["agentguid"]
 
     if message:
-        queued_message = QueuedMesssage(message_type=message_type, message=message)
+        queued_message = QueuedMesssage(agentguid=agentguid, message_type=message_type, message=message)
         queued_message.save()
 
-    return HttpResponse("")
+
+    return HttpResponse("" + z.name)
+
 
 @csrf_exempt
 def dequeue(request, guid):
     msg = None
     xml = ""
 
+    print 'dequeue'
     try:
-        msg = QueuedMesssage.objects.filter(is_delivered=False)[0]
+        msg = QueuedMesssage.objects.filter(agentguid=guid,is_delivered=False)[0]
     except:
-         pass
+        print 'fail'
+        pass
 
     if msg:
         encoded = base64.b64encode(msg.message)
@@ -68,3 +83,29 @@ def dequeue(request, guid):
         msg.is_delivered = True
         msg.save()
     return HttpResponse(xml)
+
+
+@csrf_exempt
+def zep(request):
+    """
+    Upload a ZEP file
+    Test: curl --data @"/Users/michaelritsema/virtual-projects/splunk-conf/concentrator/datacollection/powershell/scripts/GetSystemMemory.zep" http://localhost:8000/api/zep
+
+    """
+
+    data=request.body
+    
+    msg = Zext(zep=data)
+    msg.save() #double save required
+    print msg.name
+    try:
+        Zext.objects.filter(name=msg.name).delete()
+    except:
+        print sys.exc_info()[0]
+
+    msg.save()
+
+    return HttpResponse(msg.name) 
+
+
+    
