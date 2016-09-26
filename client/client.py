@@ -7,10 +7,22 @@ import zipfile
 #print dir(requests)
 
 
+
 def enqueue():
 	r = requests.post('http://localhost:8000/api/enqueue',json.dumps({
-		'name':'Kill a Specific Process by PID',
-		'ProcessIDs': "100 200 500 700"
+		'name':'Restart a service',
+		'agentguid':"FFFF9B50-3AF5-11E6-9BEB-005056E3BAEA",
+		'serviceName': ""
+		#'serviceName': "Ziften.IPFIX.Agent"
+		}))
+	print r.content
+
+def enqueue_raw(name,input):
+	r = requests.post('http://localhost:8000/api/enqueue',json.dumps({
+		'name': name,
+		'agentguid':"FFFF9B50-3AF5-11E6-9BEB-005056E3BAEA",
+		'RAW': input
+		#'serviceName': "Ziften.IPFIX.Agent"
 		}))
 	print r.content
 
@@ -37,6 +49,9 @@ def update_zeps():
 if __name__ == "__main__":
 	if os.sys.argv[1] == "enqueue":
 		enqueue()
+	if os.sys.argv[1] == "enqueue-raw":
+		# name,input
+		enqueue_raw(os.sys.argv[2],os.sys.argv[3])	
 	if os.sys.argv[1] == "dequeue":
 		dequeue()
 	if os.sys.argv[1] == "update-zeps":
